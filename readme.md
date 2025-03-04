@@ -1,15 +1,21 @@
-*IRDO Website Pemantauan Informasi Lomba*
+# **IRDO Website Pemantauan Informasi Lomba**  
 
-** introduction**
-website ini dibuat untuk melihat informasi terbaru lomba seperti:
-1. pengumuman
-2. Unduhan
-3. Galeri
-4. Cabang Lomba
-5. Berita
-dll
+## **Pendahuluan**  
+Website ini dibuat untuk menampilkan informasi terbaru mengenai lomba, termasuk:  
+- **Pengumuman**  
+- **Unduhan**  
+- **Galeri**  
+- **Cabang Lomba**  
+- **Berita**  
+- Dan lainnya  
 
-** how to install**
-1. pull repo ini
-2. import database "irdo.sql" ke phpmyadmin
+## **Cara Instalasi**  
+1. Clone atau pull repository ini:  
+   ```sh
+   git clone https://github.com/username/irdo.git
+   ```
+2. Import database `irdo.sql` ke **phpMyAdmin**.  
 
+---
+
+Kalau ada informasi tambahan seperti **persyaratan sistem**, **konfigurasi lingkungan**, atau **penggunaan**, bisa ditambahkan juga. Mau saya bantu melengkapinya? 😊🚀
