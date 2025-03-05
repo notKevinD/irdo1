@@ -25,7 +25,7 @@
       color: white !important;
     }
     .nav-item{
-      font-size: 20px !important;
+      font-size: 17px !important;
     }
     .dropdown-menu {
       background-color: #283371;
@@ -36,12 +36,20 @@
     .dropdown-item:hover {
       background-color: #F35D42;
     }
-    .card, .card12 {
+    .card{
       box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
       transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
     }
-    .card:hover, .card12:hover {
+    .card:hover{
       box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+      transform: translateY(-5px);
+    }
+    .card12 {
+      /* box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15); */
+      transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+    .card12:hover {
+      /* box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); */
       transform: translateY(-5px);
     }
     .footer {
@@ -135,7 +143,6 @@
         <div class="dropdown ps-3">
           <a class="btn btn-danger dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Indonesia</a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Indonesia</a></li>
             <li><a class="dropdown-item" href="#">English</a></li>
           </ul>
         </div>
@@ -259,7 +266,7 @@ $result = $conn->query($sql);
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 $imagePath = "../../img/galeri/" . $row["namaFile"] . ".JPG";
-                echo '<div class="col-md-3 d-flex justify-content-center align-items-center my-3 mx-1 card12">
+                echo '<div class="col-md-4 d-flex justify-content-center align-items-center my-3 card12">
                         <img src="' . $imagePath . '" class="card-img-top" alt="Gambar Galeri">
                       </div>';
             }
@@ -268,7 +275,7 @@ $result = $conn->query($sql);
         }
         ?>
     </div>
-    <a href="#" class="btn py-2 text-white my-3" style="background-color: #F2713A">Lihat Lebih Banyak</a>
+    <a href="galeri.php" class="btn py-2 text-white my-3" style="background-color: #F2713A">Lihat Lebih Banyak</a>
 </div>
 
 
