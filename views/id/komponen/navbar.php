@@ -7,16 +7,16 @@
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link <?= ($activePage == 'home') ? 'active' : '' ?>" href="mainPage.php">Home</a>
+                    <a class="nav-link " href="mainPage.php" <?= ($activePage == 'home') ? 'style="color: #81CCE3 !important"' : '' ?>>Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link <?= ($activePage == 'tentang') ? 'active' : '' ?>" href="tentang.php">Tentang</a>
+                    <a class="nav-link " href="tentang.php"  <?= ($activePage == 'tentang') ? 'style="color: #81CCE3 !important"' : '' ?>>Tentang</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link <?= ($activePage == 'unduhan') ? 'active' : '' ?>" href="unduhan.php">Unduhan</a>
+                    <a class="nav-link" href="unduhan.php"  <?= ($activePage == 'unduhan') ? 'style="color: #81CCE3 !important"' : '' ?>>Unduhan</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link <?= ($activePage == 'registrasi') ? 'active' : '' ?>" href="registrasi.php">Registrasi</a>
+                    <a class="nav-link" href="registrasi.php" <?= ($activePage == 'registrasi') ? 'style="color: #81CCE3 !important"' : '' ?> >Registrasi</a>
                 </li>
             </ul>
         </div>
