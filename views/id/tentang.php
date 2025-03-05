@@ -12,11 +12,24 @@
     body {
       font-family: 'Poppins', sans-serif;
     }
+
+    .logo{
+      max-height: 80px;
+    }
+
+    h1{
+      /* font-size: 30px; */
+      font-weight: bold;
+      color: #283371;
+    }
     .navbar {
       background-color: #283371;
     }
     .navbar-brand, .nav-link, .dropdown-toggle {
       color: white !important;
+    }
+    .nav-item{
+      font-size: 17px !important;
     }
     .dropdown-menu {
       background-color: #283371;
@@ -27,16 +40,24 @@
     .dropdown-item:hover {
       background-color: #F35D42;
     }
-    .card, .card12 {
+    .card{
       box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
       transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
     }
-    .card:hover, .card12:hover {
+    .card:hover{
       box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
       transform: translateY(-5px);
     }
+    .card12 {
+      /* box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15); */
+      transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+    .card12:hover {
+      /* box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); */
+      transform: translateY(-5px);
+    }
     .footer {
-      background-color: #161743;
+      background-color: #81CCE3;
       color: white;
       padding-top: 30px;
     }
@@ -104,33 +125,36 @@
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg fixed-top shadow z-index-1030 py-3" style="opacity: 99%;">
-    <div class="container-xxl">
-      <a class="navbar-brand ms-3" href="mainPage.php">IRDO</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="mainPage.php" style="color: #81CCE3 !important">Home</a></li>
-          <li class="nav-item"><a class="nav-link active" href="tentang.php">Tentang</a></li>
-          <li class="nav-item"><a class="nav-link" href="unduhan.php">Unduhan</a></li>
-          <li class="nav-item"><a class="nav-link" href="registrasi.php">Registrasi</a></li>
-        </ul>
+  <nav class="navbar navbar-expand-lg fixed-top shadow z-index-1030 py-3" data-bs-theme="dark" style="opacity: 99%;">
+      <div class="container-xxl">
+        <a class="navbar-brand ms-3" href="mainPage.php">IRDO</a>
+        
+        <!-- Tambahkan ms-auto agar tombol tiga garis ada di kanan -->
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="mainPage.php">Home</a></li>
+            <li class="nav-item"><a class="nav-link active" href="tentang.php"  style="color: #81CCE3 !important">Tentang</a></li>
+            <li class="nav-item"><a class="nav-link" href="unduhan.php">Unduhan</a></li>
+            <li class="nav-item"><a class="nav-link" href="registrasi.php">Registrasi</a></li>
+          </ul>
+        </div>
+
+        <!-- Dropdown Bahasa -->
+        <div class="dropdown ps-3">
+          <a class="btn btn-danger dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Indonesia</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">English</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="dropdown">
-        <a class="btn btn-danger dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Indonesia</a>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Indonesia</a></li>
-          <li><a class="dropdown-item" href="#">English</a></li>
-        </ul>
-      </div>
-    </div>
   </nav>
 
-
-  <div class="container-xxl">
-    <div class="container bg-body-secondary p-3">
+  <div class="container bg-body pb-3" style="padding-top: 120px;">
+    <div class="container bg-body p-3">
       <h1 class="text-center">Tentang</h1>
       <img src="../../img/ubl.png" alt="Logo" class="img-fluid w-100 p-5">
       <p style="text-align: justify;">Kontes Robot Indonesia (KRI) adalah kegiatan kompetisi tahunan mahasiswa dalam bidang rancang bangun dan rekayasa robotika yang dapat diikuti oleh seluruh mahasiswa pada perguruan tinggi di wilayah Republik Indonesia, dari berbagai K/L atau kedinasan, yang tercatat pada Pangkalan Data Pendidikan Tinggi. KRI 2024 diselenggarakan oleh Balai Pengembangan Talenta Indonesia (BPTI) Pusat Prestasi Nasional (Puspresnas) Kementerian Pendidikan, Kebudayaan, Riset dan Teknologi (Kemendikbudristek) Republik Indonesia. KRI pertama kali diselenggarakan pada tahun 2003 di bawah Direktorat Jenderal Pendidikan Tinggi, Departemen Pendidikan dan Kebudayaan pada saat itu.</p>
@@ -155,15 +179,12 @@
     <div class="container">
         <div class="row">
             <!-- Left Column (Logo & Social Media) -->
-            <div class="col-md-4 text-center text-md-start">
-                <img src="../../img/ubl.png" alt="Logo" class="footer-logo mb-3 pe-4">
-                <img src="../../img/robotic.JPG" alt="Logo" class="footer-logo mb-3 ps-4">
-                <p>Situs ini dibawah naungan dari UKM Robotic Universitas Bandar Lampung</p>
+            <div class="col-md-4 text-center">
+              <img src="../../img/ubl.png" alt="Logo" class="footer-logo mb-3 px-2" style="background-color: #81CCE3">
+              <img src="../../img/robotic.png" alt="Logo" class="footer-logo mb-3 px-2">
+                <p class="text-start">Situs ini dibawah naungan dari UKM Robotic Universitas Bandar Lampung</p>
                 <div class="footer-icons">
-                    <a href="#"><i class="bi bi-facebook"></i></a>
-                    <a href="#"><i class="bi bi-twitter"></i></a>
                     <a href="#"><i class="bi bi-instagram"></i></a>
-                    <a href="#"><i class="bi bi-linkedin"></i></a>
                 </div>
             </div>
 

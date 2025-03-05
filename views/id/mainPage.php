@@ -13,6 +13,10 @@
       font-family: 'Poppins', sans-serif;
     }
 
+    .logo{
+      max-height: 80px;
+    }
+
     h4{
       font-size: 30px;
       font-weight: bold;
@@ -53,7 +57,7 @@
       transform: translateY(-5px);
     }
     .footer {
-      background-color: #161743;
+      background-color: #81CCE3;
       color: white;
       padding-top: 30px;
     }
@@ -154,8 +158,8 @@
     <div class="row justify-content-center" style="font-family: 'Poppins', sans-serif;">
       <div class="col-12 my-3">
         <div class="d-flex justify-content-center align-items-center mb-3">
-          <img src="../../img/ubl.png" alt="Logo UBL" class="logo mx-3">
-          <img src="../../img/robotic.jpg" alt="Logo Robotic" class="logo mx-3">
+        <img src="../../img/ubl.png" alt="Logo UBL" class="logo mx-3">
+        <img src="../../img/robotic.png" alt="Logo Robotic" class="logo mx-3">
         </div>
         <h2 class="title">IRDO</h2>
         <h3 class="subtitle">International Robot Design Olympiad</h3>
@@ -247,7 +251,7 @@
           </div>
         </div>
       </div>
-      <a href="#" class="btn py-2 text-white my-3" style="background-color: #F2713A ">Lihat Lebih Banyak</a>
+      <a href="unduhan.php" class="btn py-2 text-white my-3" style="background-color: #F2713A ">Lihat Lebih Banyak</a>
     </div>
 
     <?php
@@ -283,10 +287,10 @@ $result = $conn->query($sql);
     <div class="container">
         <div class="row">
             <!-- Left Column (Logo & Social Media) -->
-            <div class="col-md-4 text-center text-md-start">
-                <img src="../../img/ubl.png" alt="Logo" class="footer-logo mb-3 pe-4">
-                <img src="../../img/robotic.JPG" alt="Logo" class="footer-logo mb-3 ps-4">
-                <p>Situs ini dibawah naungan dari UKM Robotic Universitas Bandar Lampung</p>
+            <div class="col-md-4 text-center">
+              <img src="../../img/ubl.png" alt="Logo" class="footer-logo mb-3 px-2" style="background-color: #81CCE3">
+              <img src="../../img/robotic.png" alt="Logo" class="footer-logo mb-3 px-2">
+                <p class="text-start">Situs ini dibawah naungan dari UKM Robotic Universitas Bandar Lampung</p>
                 <div class="footer-icons">
                     <a href="#"><i class="bi bi-instagram"></i></a>
                 </div>

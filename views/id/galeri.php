@@ -9,8 +9,12 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   
   <style>
-     body {
+    body {
       font-family: 'Poppins', sans-serif;
+    }
+
+    .logo{
+      max-height: 80px;
     }
 
     h4{
@@ -25,7 +29,7 @@
       color: white !important;
     }
     .nav-item{
-      font-size: 20px !important;
+      font-size: 17px !important;
     }
     .dropdown-menu {
       background-color: #283371;
@@ -53,7 +57,7 @@
       transform: translateY(-5px);
     }
     .footer {
-      background-color: #161743;
+      background-color: #81CCE3;
       color: white;
       padding-top: 30px;
     }
@@ -121,30 +125,32 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg bg-primary bg-gradient" data-bs-theme="dark">
-    <div class="container-xxl" >
-      <a class="navbar-brand" href="mainPage.php">IRDO</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="mainPage.php">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="tentang.php">Tentang</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="unduhan.php">Unduhan</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="registrasi.php">Registrasi</a>
-          </li>
-        </ul>
+  <nav class="navbar navbar-expand-lg fixed-top shadow z-index-1030 py-3" data-bs-theme="dark" style="opacity: 99%;">
+      <div class="container-xxl">
+        <a class="navbar-brand ms-3" href="mainPage.php">IRDO</a>
+        
+        <!-- Tambahkan ms-auto agar tombol tiga garis ada di kanan -->
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="mainPage.php"  style="color: #81CCE3 !important">Home</a></li>
+            <li class="nav-item"><a class="nav-link active" href="tentang.php">Tentang</a></li>
+            <li class="nav-item"><a class="nav-link" href="unduhan.php">Unduhan</a></li>
+            <li class="nav-item"><a class="nav-link" href="registrasi.php">Registrasi</a></li>
+          </ul>
+        </div>
+
+        <!-- Dropdown Bahasa -->
+        <div class="dropdown ps-3">
+          <a class="btn btn-danger dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Indonesia</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">English</a></li>
+          </ul>
+        </div>
       </div>
-    </div>
   </nav>
 
   <?php
@@ -155,7 +161,7 @@ $sql = "SELECT namaFile FROM galeri ORDER BY id DESC";
 $result = $conn->query($sql);
 ?>
 
-<div class="container text-center bg-body pb-3">
+<div class="container text-center bg-body pb-3" style="padding-top: 120px;">
     <h5 class="pt-4" style="font-weight: bold; font-size: 18px; color: #81CCE3;">Galeri</h5>
     <h4 class="pt-1">Galeri INRO 2023</h4>
     <div class="row pt-3 d-flex justify-content-center">
@@ -178,10 +184,10 @@ $result = $conn->query($sql);
     <div class="container">
         <div class="row">
             <!-- Left Column (Logo & Social Media) -->
-            <div class="col-md-4 text-center text-md-start">
-                <img src="../../img/ubl.png" alt="Logo" class="footer-logo mb-3 pe-4">
-                <img src="../../img/robotic.JPG" alt="Logo" class="footer-logo mb-3 ps-4">
-                <p>Situs ini dibawah naungan dari UKM Robotic Universitas Bandar Lampung</p>
+            <div class="col-md-4 text-center">
+              <img src="../../img/ubl.png" alt="Logo" class="footer-logo mb-3 px-2" style="background-color: #81CCE3">
+              <img src="../../img/robotic.png" alt="Logo" class="footer-logo mb-3 px-2">
+                <p class="text-start">Situs ini dibawah naungan dari UKM Robotic Universitas Bandar Lampung</p>
                 <div class="footer-icons">
                     <a href="#"><i class="bi bi-instagram"></i></a>
                 </div>
@@ -218,6 +224,7 @@ $result = $conn->query($sql);
     </a>
     
 </footer>
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
