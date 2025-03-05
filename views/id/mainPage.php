@@ -12,6 +12,12 @@
     body {
       font-family: 'Poppins', sans-serif;
     }
+
+    h4{
+      font-size: 30px;
+      font-weight: bold;
+      color: #283371;
+    }
     .navbar {
       background-color: #283371;
     }
@@ -224,23 +230,33 @@
       <a href="#" class="btn py-2 text-white my-3" style="background-color: #F2713A ">Lihat Lebih Banyak</a>
     </div>
 
-    <div class="container text-center bg-body pb-3">
-      <h4 class="pt-4">Galeri INRO 2023</h4>
-      <div class="row pt-3 d-flex justify-content-center ">
-        <div class="col-md-3 d-flex justify-content-center align-items-center my-3 mx-1 card12">
-          <img src="../../img/a.jpeg" class="card-img-top" alt="...">
-        </div>
-        <div class="col-md-3 d-flex justify-content-center align-items-center my-3 mx-1 card12">
-          <img src="../../img/a.jpeg" class="card-img-top" alt="...">
-        </div>
-        <div class="col-md-3 d-flex justify-content-center align-items-center my-3 mx-1 card12">
-          <img src="../../img/a.jpeg" class="card-img-top" alt="...">
-        </div>
-      </div>
-      <a href="#" class="btn py-2 text-white my-3" style="background-color: #F2713A ">Lihat Lebih Banyak</a>
-    </div>
+    <?php
+include '../../config/database.php';
 
-  </div>
+// Query untuk mengambil 3 data terakhir dari tabel galeri
+$sql = "SELECT namaFile FROM galeri ORDER BY id DESC LIMIT 3";
+$result = $conn->query($sql);
+?>
+
+<div class="container text-center bg-body pb-3">
+    <h4 class="pt-4">Galeri INRO 2023</h4>
+    <div class="row pt-3 d-flex justify-content-center">
+        <?php
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $imagePath = "../../img/galeri/" . $row["namaFile"] . ".JPG";
+                echo '<div class="col-md-3 d-flex justify-content-center align-items-center my-3 mx-1 card12">
+                        <img src="' . $imagePath . '" class="card-img-top" alt="Gambar Galeri">
+                      </div>';
+            }
+        } else {
+            echo "<p>Belum ada gambar di galeri.</p>";
+        }
+        ?>
+    </div>
+    <a href="#" class="btn py-2 text-white my-3" style="background-color: #F2713A">Lihat Lebih Banyak</a>
+</div>
+
 
   <footer class="footer">
     <div class="container">
