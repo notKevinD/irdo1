@@ -28,7 +28,7 @@ switch ($request) {
         require 'views/id/pengumuman.php';
         break;
     case '/id/berita':
-            require 'views/id/berita.php';
+            require 'views/id/berita/berita.php';
             break;
     default:
         require 'views/id/404.php'; // Pastikan ada file ini

@@ -12,12 +12,10 @@
 </head>
 
 <body>
-<?php 
-  $activePage = 'home'; 
-  include 'komponen/navbar.php'; 
-  ?>
-
-
+    <?php 
+    $activePage = 'home'; 
+    include 'komponen/navbar.php'; 
+    ?>
   <div class="container bg-body pb-5" style="padding-top: 120px;">
     <div class="container bg-body p-3">
       <h1 class="pt-1 text-center pb-5">Berita</h1>
