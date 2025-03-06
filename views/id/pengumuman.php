@@ -22,26 +22,44 @@
   ?>  
 
   <div class="container text-center bg-body pb-3" style="padding-top: 100px;">
-      <h1 class="pt-4">Berita</h1>
+      <h1 class="pt-4">Pengumuman</h1>
       <div class="row pt-3 px-5 d-flex justify-content-center" style="min-height : 500px">
-        
       <div class="col-md-4 d-flex justify-content-center align-items-center my-3">
           <div class="card" style="width: 20rem;">
-            <img src="img/a.jpeg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <p class="d-inline-flex align-items-center">
-                <i class="bi bi-person text-primary me-2"></i>
-                admin
-                <i class="bi bi-calendar4-week text-primary me-2 ps-3"></i>
+            <div class="card-body text-start">
+              <p class="d-inline-flex align-items-center ">
+                <i class="bi bi-calendar4-week text-primary me-2"></i>
                 02 september 2022
               </p>
-              <p class="card-text text-start fw-bold">halooooooo ya guys</p>
-              <a href="berita.php" class="btn text-white" style="background-color: #283371;">Read More</a>
+              <p class="card-text text-start fw-bold">Pengumuman Pemenang Lomba</p>
+              <a href="#" class="btn" style="background-color: #81CCE3; color: #283371">Selengkapnya</a>
             </div>
           </div>
         </div>
-
-
+        <div class="col-md-4 d-flex justify-content-center align-items-center my-3">
+          <div class="card" style="width: 20rem;">
+            <div class="card-body text-start">
+              <p class="d-inline-flex align-items-center ">
+                <i class="bi bi-calendar4-week text-primary me-2"></i>
+                02 september 2022
+              </p>
+              <p class="card-text text-start fw-bold">Pengumuman Pemenang Lomba</p>
+              <a href="#" class="btn" style="background-color: #81CCE3; color: #283371">Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 d-flex justify-content-center align-items-center my-3">
+          <div class="card" style="width: 20rem;">
+            <div class="card-body text-start">
+              <p class="d-inline-flex align-items-center ">
+                <i class="bi bi-calendar4-week text-primary me-2"></i>
+                02 september 2022
+              </p>
+              <p class="card-text text-start fw-bold">Pengumuman Pemenang Lomba</p>
+              <a href="#" class="btn" style="background-color: #81CCE3; color: #283371">Selengkapnya</a>
+            </div>
+          </div>
+        </div>
       </div>
 
       
