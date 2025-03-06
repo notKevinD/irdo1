@@ -8,16 +8,16 @@
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item px-2">
-                    <a class="nav-link" href="mainPage.php" <?= ($activePage == 'home') ? 'style="color: #81CCE3 !important"' : '' ?>>Home</a>
+                    <a class="nav-link" href="id/main" <?= ($activePage == 'home') ? 'style="color: #81CCE3 !important"' : '' ?>>Home</a>
                 </li>
                 <li class="nav-item px-2">
-                    <a class="nav-link" href="tentang.php" <?= ($activePage == 'tentang') ? 'style="color: #81CCE3 !important"' : '' ?>>Tentang</a>
+                    <a class="nav-link" href="id/tentang" <?= ($activePage == 'tentang') ? 'style="color: #81CCE3 !important"' : '' ?>>Tentang</a>
                 </li>
                 <li class="nav-item px-2">
-                    <a class="nav-link" href="unduhan.php" <?= ($activePage == 'unduhan') ? 'style="color: #81CCE3 !important"' : '' ?>>Unduhan</a>
+                    <a class="nav-link" href="id/unduhan" <?= ($activePage == 'unduhan') ? 'style="color: #81CCE3 !important"' : '' ?>>Unduhan</a>
                 </li>
                 <li class="nav-item px-2">
-                    <a class="nav-link" href="registrasi.php" <?= ($activePage == 'registrasi') ? 'style="color: #81CCE3 !important"' : '' ?>>Registrasi</a>
+                    <a class="nav-link" href="id/registrasi" <?= ($activePage == 'registrasi') ? 'style="color: #81CCE3 !important"' : '' ?>>Registrasi</a>
                 </li>
             </ul>
             
@@ -27,9 +27,26 @@
                     Indonesia
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">English</a></li>
+                <li>
+                    <a class="dropdown-item" href="<?php 
+                        echo str_replace('/id/', '/en/', $_SERVER['REQUEST_URI']); 
+                    ?>">English</a>
+                </li>
+
+
                 </ul>
             </div>
         </div>
     </div>
 </nav>
+
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <base href="http://localhost/irdo1/">
+  <link rel="stylesheet" href="style/main.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">

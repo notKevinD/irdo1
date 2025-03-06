@@ -20,7 +20,7 @@
 
   <div class="container bg-body pb-3" style="padding-top: 120px;">
     <div class="container bg-body p-3">
-      <h1 class="pt-1 text-center">Berita</h1>
+      <h1 class="pt-1 text-center pb-5">Berita</h1>
         <div class="row">
             <!-- Bagian Kiri: Isi Berita -->
             <div class="col-md-9">

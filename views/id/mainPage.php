@@ -5,10 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>IRDO</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  
-  <link rel="stylesheet" href="../../style/main.css">
+
 </head>
 
 <body>
@@ -22,8 +19,8 @@
     <div class="row justify-content-center" style="font-family: 'Poppins', sans-serif;">
       <div class="col-12 my-3">
         <div class="d-flex justify-content-center align-items-center mb-3">
-        <img src="../../img/ubl.png" alt="Logo UBL" class="logo mx-3">
-        <img src="../../img/robotic.png" alt="Logo Robotic" class="logo mx-3">
+        <img src="img/ubl.png" alt="Logo UBL" class="logo mx-3">
+        <img src="img/robotic.png" alt="Logo Robotic" class="logo mx-3">
         </div>
         <h2 class="title">IRDO</h2>
         <h3 class="subtitle">International Robot Design Olympiad</h3>
@@ -38,7 +35,7 @@
       <div class="row pt-3 d-flex justify-content-center">
         <div class="col-md-4 d-flex justify-content-center align-items-center my-3">
           <div class="card" style="width: 20rem;">
-            <img src="../../img/a.jpeg" class="card-img-top" alt="...">
+            <img src="img/a.jpeg" class="card-img-top" alt="...">
             <div class="card-body">
               <p class="card-text">Cabang Perlombaan</p>
             </div>
@@ -46,7 +43,7 @@
         </div>
         <div class="col-md-4 d-flex justify-content-center align-items-center my-3">
           <div class="card" style="width: 20rem;">
-            <img src="../../img/a.jpeg" class="card-img-top" alt="...">
+            <img src="img/a.jpeg" class="card-img-top" alt="...">
             <div class="card-body">
               <p class="card-text">Cabang Perlombaan</p>
             </div>
@@ -61,7 +58,7 @@
       <div class="row pt-3 d-flex justify-content-center" style="min-height: 450px;">
         <div class="col-md-4 d-flex justify-content-center align-items-center my-3">
           <div class="card" style="width: 20rem;">
-            <img src="../../img/a.jpeg" class="card-img-top" alt="...">
+            <img src="img/a.jpeg" class="card-img-top" alt="...">
             <div class="card-body">
               <p class="d-inline-flex align-items-center">
                 <i class="bi bi-person text-primary me-2"></i>
@@ -109,7 +106,7 @@
                 PDF
               </h2>
               <p class="card-text my-5 fw-semibold">Petunjuk Teknis Lomba IRDO</p>
-              <a href="../../unduhan/Tech Master.pdf" class="btn text-white px-3 py-2" style="background-color: #F35D42" download>Unduh</a>
+              <a href="unduhan/Tech Master.pdf" class="btn text-white px-3 py-2" style="background-color: #F35D42" download>Unduh</a>
 
             </div>
           </div>
@@ -119,7 +116,7 @@
     </div>
 
     <?php
-include '../../config/database.php';
+include 'config/database.php';
 
 // Query untuk mengambil 3 data terakhir dari tabel galeri
 $sql = "SELECT namaFile FROM galeri ORDER BY id DESC LIMIT 3";
@@ -133,7 +130,7 @@ $result = $conn->query($sql);
         <?php
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                $imagePath = "../../img/galeri/" . $row["namaFile"] . ".JPG";
+                $imagePath = "img/galeri/" . $row["namaFile"] . ".JPG";
                 echo '<div class="col-md-4 d-flex justify-content-center align-items-center my-3 card12">
                         <img src="' . $imagePath . '" class="card-img-top" alt="Gambar Galeri">
                       </div>';
@@ -151,10 +148,7 @@ $result = $conn->query($sql);
   include 'komponen/footer.php'; 
   ?>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
 </body>
 
 </html>

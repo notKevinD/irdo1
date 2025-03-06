@@ -3,8 +3,8 @@
         <div class="row">
             <!-- Left Column (Logo & Social Media) -->
             <div class="col-md-4 text-center">
-              <img src="../../img/robotic.png" alt="Logo" class="footer-logo mb-3 px-2">
-              <img src="../../img/ubl.png" alt="Logo" class="footer-logo mb-3 px-2">
+              <img src="img/robotic.png" alt="Logo" class="footer-logo mb-3 px-2">
+              <img src="img/ubl.png" alt="Logo" class="footer-logo mb-3 px-2">
                 <p class="text-start">Situs ini dibawah naungan dari UKM Robotic Universitas Bandar Lampung</p>
                 <div class="footer-icons">
                     <a href="#"><i class="bi bi-instagram"></i></a>
@@ -37,7 +37,7 @@
     </div>
 
     <!-- Back to Top Button -->
-    <a href="#" class="back-to-top">
+    <a href="<?php echo $_SERVER['REQUEST_URI']; ?>#" class="back-to-top">
         <i class="bi bi-arrow-up"></i>
     </a>
     

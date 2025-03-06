@@ -1,0 +1,7 @@
+RewriteEngine On
+RewriteBase /irdo1/
+
+# Cek apakah file atau folder ada, jika tidak, arahkan ke index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [QSA,L]
