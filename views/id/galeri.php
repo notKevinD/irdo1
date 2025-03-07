@@ -58,7 +58,7 @@
     }
 
     .modal-body img {
-        min-width: 80%;
+        min-width: 90%;
         /* min-height: 80%; */
         max-width: 100%;
         max-height: 100vh;
@@ -106,7 +106,7 @@
 ?>
 
 <?php
-include '../../config/database.php';
+include 'config/database.php';
 
 // Query untuk mengambil gambar dari tabel galeri
 $sql = "SELECT namaFile FROM galeri ORDER BY id DESC";
@@ -114,14 +114,13 @@ $result = $conn->query($sql);
 ?>
 
 <div class="container text-center bg-body pb-3" style="padding-top: 120px;">
-    <h5 class="pt-4" style="font-weight: bold; font-size: 18px; color: #81CCE3;">Galeri</h5>
-    <h4 class="pt-1">Galeri IRDO 2023</h4>
+    <h1 class="pt-1">Galeri IRDO 2023</h1>
     <div class="row pt-3 d-flex justify-content-center">
         <?php
         $imageArray = [];
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                $imagePath = "../../img/galeri/" . $row["namaFile"] . ".JPG";
+                $imagePath = "img/galeri/" . $row["namaFile"] . ".JPG";
                 $imageArray[] = $imagePath;
                 echo '<div class="col-md-4 d-flex justify-content-center align-items-center my-3">
                         <div class="gallery-item">

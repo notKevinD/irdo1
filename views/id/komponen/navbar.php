@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg fixed-top shadow z-index-1030 py-3" data-bs-theme="dark" style="opacity: 99%;">
     <div class="container-xxl">
-        <a class="navbar-brand ms-3" href="mainPage.php">IRDO</a>
+        <a class="navbar-brand ms-3" href="id/main">IRDO</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>

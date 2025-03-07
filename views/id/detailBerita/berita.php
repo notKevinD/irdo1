@@ -72,8 +72,8 @@ $result_lainnya = $stmt_lainnya->get_result();
                     <ul class="list-unstyled pt-5 border-top border-black">
                         <?php while ($lain = $result_lainnya->fetch_assoc()): ?>
                             <li class="d-flex mb-3">
-                                <img src="img/<?= htmlspecialchars($lain['foto']) ?>.png" alt="Berita"
-                                    class="img-fluid me-2" style="width: 80px; height: 50px;">
+                                <img src="img/<?= htmlspecialchars($lain['foto'])?>" alt="Berita"
+                                    class="img-fluid me-2" style="height: 80px;">
                                 <div>
                                     <a href="/id/detailBerita/<?= $lain['slug'] ?>"
                                         class="text-dark fw-bold"><?= htmlspecialchars($lain['Headline']) ?></a>

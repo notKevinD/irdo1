@@ -92,45 +92,80 @@
       <a href="id/berita" class="btn py-2 text-white my-3" style="background-color: #F2713A ">Lihat Lebih Banyak</a>
     </div>
 
+
+    <?php
+    require 'config/database.php'; // Sesuaikan dengan koneksi database
+    
+    // Ambil semua berita
+    $query = "SELECT * FROM pengumuman ORDER BY timeStamp DESC LIMIT 3";
+    $result = $conn->query($query);
+
+    // Jika tidak ada berita, tampilkan pesan
+    if ($result->num_rows == 0) {
+      echo "<h2>Tidak ada pengumuman yang tersedia!</h2>";
+      exit;
+    }
+    ?>
     <div class="container text-center bg-body pb-3">
       <h5 class="pt-4" style="font-weight: bold; font-size: 18px; color: #81CCE3;">Pengumuman</h5>
       <h4 class="pt-1">Pengumuman Terbaru</h4>
       <div class="row pt-3 d-flex justify-content-center">
-        <div class="col-md-4 d-flex justify-content-center align-items-center my-3">
+        <?php while ($pengumuman = $result->fetch_assoc()): ?>
+          <div class="col-md-4 d-flex justify-content-center align-items-center my-3">
           <div class="card" style="width: 20rem;">
             <div class="card-body text-start">
               <p class="d-inline-flex align-items-center ">
                 <i class="bi bi-calendar4-week text-primary me-2"></i>
-                02 september 2022
+                <?= date('d F Y', strtotime($pengumuman['timeStamp'])) ?>
               </p>
-              <p class="card-text text-start fw-bold">Pengumuman Pemenang Lomba</p>
-              <a href="#" class="btn" style="background-color: #81CCE3; color: #283371">Selengkapnya</a>
+              <p class="card-text text-start fw-bold"><?= htmlspecialchars($pengumuman['headline']) ?></p>
+              <a href="id/detailPengumuman/<?= htmlspecialchars($pengumuman['slug']) ?>" class="btn" style="background-color: #81CCE3; color: #283371">Selengkapnya</a>
             </div>
           </div>
         </div>
+        <?php endwhile; ?>
+    
       </div>
-      <a href="#" class="btn py-2 text-white my-3" style="background-color: #F2713A ">Lihat Lebih Banyak</a>
+      <a href="id/pengumuman" class="btn py-2 text-white my-3" style="background-color: #F2713A ">Lihat Lebih Banyak</a>
     </div>
+
+
+    <?php
+    require 'config/database.php'; // Sesuaikan dengan koneksi database
+    
+    // Ambil semua berita
+    $query = "SELECT * FROM unduhan ORDER BY id DESC LIMIT 3";
+    $result = $conn->query($query);
+
+    // Jika tidak ada berita, tampilkan pesan
+    if ($result->num_rows == 0) {
+      echo "<h2>Tidak ada unduhan yang tersedia!</h2>";
+      exit;
+    }
+    ?>
 
     <div class="container text-center bg-body-tertiary pb-3">
       <h5 class="pt-4" style="font-weight: bold; font-size: 18px; color: #81CCE3;">Unduhan</h5>
       <h4 class="pt-1">Unduhan Terbaru</h4>
       <div class="row pt-3 d-flex justify-content-center">
+
+      <?php while ($unduhan = $result->fetch_assoc()): ?>
         <div class="col-md-4 d-flex justify-content-center align-items-center my-3">
           <div class="card" style="width: 20rem;">
             <div class="card-body">
               <h2 class="d-inline-flex align-items-center border-bottom">
-                PDF
+              <?= htmlspecialchars($unduhan['jenisFile']) ?>
               </h2>
-              <p class="card-text my-5 fw-semibold">Petunjuk Teknis Lomba IRDO</p>
-              <a href="unduhan/Tech Master.pdf" class="btn text-white px-3 py-2" style="background-color: #F35D42"
+              <p class="card-text my-5 fw-semibold"><?= htmlspecialchars($unduhan['judul']) ?></p>
+              <a href="unduhan/<?= htmlspecialchars($unduhan['namaFile']) ?>" class="btn text-white px-3 py-2" style="background-color: #F35D42"
                 download>Unduh</a>
-
             </div>
           </div>
+          <?php endwhile; ?>
+
         </div>
       </div>
-      <a href="unduhan.php" class="btn py-2 text-white my-3" style="background-color: #F2713A ">Lihat Lebih Banyak</a>
+      <a href="id/unduhan" class="btn py-2 text-white my-3" style="background-color: #F2713A ">Lihat Lebih Banyak</a>
     </div>
 
     <?php
@@ -158,7 +193,7 @@
         }
         ?>
       </div>
-      <a href="galeri.php" class="btn py-2 text-white my-3" style="background-color: #F2713A">Lihat Lebih Banyak</a>
+      <a href="id/galeri" class="btn py-2 text-white my-3" style="background-color: #F2713A">Lihat Lebih Banyak</a>
     </div>
 
 

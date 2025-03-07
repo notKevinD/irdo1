@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 07, 2025 at 06:18 AM
+-- Generation Time: Mar 07, 2025 at 03:15 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.8
 
@@ -89,8 +89,20 @@ INSERT INTO `galeri` (`id`, `namaFile`) VALUES
 CREATE TABLE `pengumuman` (
   `id` int(11) NOT NULL,
   `timeStamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `Headline` varchar(50) NOT NULL
+  `headline` varchar(50) NOT NULL,
+  `konten` text NOT NULL,
+  `kontenInggris` text NOT NULL,
+  `slug` varchar(50) NOT NULL,
+  `headlineInggris` varchar(50) NOT NULL,
+  `foto` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `pengumuman`
+--
+
+INSERT INTO `pengumuman` (`id`, `timeStamp`, `headline`, `konten`, `kontenInggris`, `slug`, `headlineInggris`, `foto`) VALUES
+(1, '2025-03-07 13:03:59', 'halo', 'asdasdadasd', 'asdsadsadsa', '1', 'asdasdsa', 'robotic.png');
 
 -- --------------------------------------------------------
 
@@ -129,8 +141,16 @@ INSERT INTO `registrasi` (`id`, `nama_tim`, `asal_sekolah`, `anggota1`, `anggota
 CREATE TABLE `unduhan` (
   `id` int(11) NOT NULL,
   `judul` varchar(50) NOT NULL,
-  `namaFile` varchar(50) NOT NULL
+  `namaFile` varchar(50) NOT NULL,
+  `jenisFile` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `unduhan`
+--
+
+INSERT INTO `unduhan` (`id`, `judul`, `namaFile`, `jenisFile`) VALUES
+(2, 'Tech Master', 'TechMaster.pdf', 'PDF');
 
 --
 -- Indexes for dumped tables
@@ -187,7 +207,7 @@ ALTER TABLE `galeri`
 -- AUTO_INCREMENT for table `pengumuman`
 --
 ALTER TABLE `pengumuman`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `registrasi`
@@ -199,7 +219,7 @@ ALTER TABLE `registrasi`
 -- AUTO_INCREMENT for table `unduhan`
 --
 ALTER TABLE `unduhan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

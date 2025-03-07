@@ -34,7 +34,7 @@ if ($result->num_rows == 0) {
     <?php while ($berita = $result->fetch_assoc()): ?>
         <div class="col-md-4 d-flex justify-content-center align-items-center my-3">
           <div class="card" style="width: 20rem;">
-            <img src="img/<?= htmlspecialchars($berita['foto']) ?>.png" class="card-img-top" alt="Gambar Berita">
+            <img src="img/<?= htmlspecialchars($berita['foto']) ?>" class="card-img-top" alt="Gambar Berita">
             <div class="card-body">
               <p class="d-inline-flex align-items-center">
                 <i class="bi bi-person text-primary me-2"></i>

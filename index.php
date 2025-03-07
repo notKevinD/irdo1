@@ -10,7 +10,10 @@ $request = str_replace($base_path, '', $request);
 if (preg_match('/^\/id\/detailBerita\/([\w-]+)$/', $request, $matches)) {
     $_GET['slug'] = $matches[1]; // Ambil slug dari URL
     require 'views/id/detailBerita/berita.php';
-} else {
+} elseif (preg_match('/^\/id\/detailPengumuman\/([\w-]+)$/', $request, $matches)) {
+    $_GET['slug'] = $matches[1]; // Ambil slug dari URL
+    require 'views/id/pengumuman/pengumuman.php';
+}else {
     switch ($request) {
         case '/id/main':
             require 'views/id/mainPage.php';
