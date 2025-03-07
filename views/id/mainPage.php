@@ -9,9 +9,9 @@
 </head>
 
 <body>
-  <?php 
-  $activePage = 'home'; 
-  include 'komponen/navbar.php'; 
+  <?php
+  $activePage = 'home';
+  include 'komponen/navbar.php';
   ?>
 
 
@@ -19,8 +19,8 @@
     <div class="row justify-content-center" style="font-family: 'Poppins', sans-serif;">
       <div class="col-12 my-3">
         <div class="d-flex justify-content-center align-items-center mb-3">
-        <img src="img/ubl.png" alt="Logo UBL" class="logo mx-3">
-        <img src="img/robotic.png" alt="Logo Robotic" class="logo mx-3">
+          <img src="img/ubl.png" alt="Logo UBL" class="logo mx-3">
+          <img src="img/robotic.png" alt="Logo Robotic" class="logo mx-3">
         </div>
         <h2 class="title">IRDO</h2>
         <h3 class="subtitle">International Robot Design Olympiad</h3>
@@ -52,32 +52,49 @@
       </div>
     </div>
 
+    <?php
+    require 'config/database.php'; // Sesuaikan dengan koneksi database
+    
+    // Ambil semua berita
+    $query = "SELECT Headline, Penulis, timeStamp,slug,foto FROM berita ORDER BY timeStamp DESC LIMIT 3";
+    $result = $conn->query($query);
+
+    // Jika tidak ada berita, tampilkan pesan
+    if ($result->num_rows == 0) {
+      echo "<h2>Tidak ada berita yang tersedia!</h2>";
+      exit;
+    }
+    ?>
+
     <div class="container text-center bg-body-tertiary pb-3">
-    <h5 class="pt-4" style="font-weight: bold; font-size: 18px; color: #81CCE3;">Berita</h5>
-    <h4 class="pt-1">Berita Terbaru</h4>
+      <h5 class="pt-4" style="font-weight: bold; font-size: 18px; color: #81CCE3;">Berita</h5>
+      <h4 class="pt-1">Berita Terbaru</h4>
       <div class="row pt-3 d-flex justify-content-center" style="min-height: 450px;">
+      <?php while ($berita = $result->fetch_assoc()): ?>
         <div class="col-md-4 d-flex justify-content-center align-items-center my-3">
           <div class="card" style="width: 20rem;">
-            <img src="img/a.jpeg" class="card-img-top" alt="...">
+            <img src="img/<?= htmlspecialchars($berita['foto']) ?>" class="card-img-top" alt="Gambar Berita">
             <div class="card-body">
               <p class="d-inline-flex align-items-center">
                 <i class="bi bi-person text-primary me-2"></i>
-                admin
+                <?= htmlspecialchars($berita['Penulis']) ?>
                 <i class="bi bi-calendar4-week text-primary me-2 ps-3"></i>
-                02 september 2022
+                <?= date('d F Y', strtotime($berita['timeStamp'])) ?>
               </p>
-              <p class="card-text text-start fw-bold">halooooooo ya guys</p>
-              <a href="berita.php" class="btn text-white" style="background-color: #283371;">Read More</a>
+              <p class="card-text text-start fw-bold"><?= htmlspecialchars($berita['Headline']) ?></p>
+              <a href="id/detailBerita/<?= htmlspecialchars($berita['slug']) ?>" class="btn text-white"
+                style="background-color: #283371;">Read More</a>
             </div>
           </div>
         </div>
+      <?php endwhile; ?>
       </div>
-      <a href="#" class="btn py-2 text-white my-3" style="background-color: #F2713A ">Lihat Lebih Banyak</a>
+      <a href="id/berita" class="btn py-2 text-white my-3" style="background-color: #F2713A ">Lihat Lebih Banyak</a>
     </div>
 
     <div class="container text-center bg-body pb-3">
-    <h5 class="pt-4" style="font-weight: bold; font-size: 18px; color: #81CCE3;">Pengumuman</h5>
-    <h4 class="pt-1">Pengumuman Terbaru</h4>
+      <h5 class="pt-4" style="font-weight: bold; font-size: 18px; color: #81CCE3;">Pengumuman</h5>
+      <h4 class="pt-1">Pengumuman Terbaru</h4>
       <div class="row pt-3 d-flex justify-content-center">
         <div class="col-md-4 d-flex justify-content-center align-items-center my-3">
           <div class="card" style="width: 20rem;">
@@ -106,7 +123,8 @@
                 PDF
               </h2>
               <p class="card-text my-5 fw-semibold">Petunjuk Teknis Lomba IRDO</p>
-              <a href="unduhan/Tech Master.pdf" class="btn text-white px-3 py-2" style="background-color: #F35D42" download>Unduh</a>
+              <a href="unduhan/Tech Master.pdf" class="btn text-white px-3 py-2" style="background-color: #F35D42"
+                download>Unduh</a>
 
             </div>
           </div>
@@ -116,37 +134,37 @@
     </div>
 
     <?php
-include 'config/database.php';
+    include 'config/database.php';
 
-// Query untuk mengambil 3 data terakhir dari tabel galeri
-$sql = "SELECT namaFile FROM galeri ORDER BY id DESC LIMIT 3";
-$result = $conn->query($sql);
-?>
+    // Query untuk mengambil 3 data terakhir dari tabel galeri
+    $sql = "SELECT namaFile FROM galeri ORDER BY id DESC LIMIT 3";
+    $result = $conn->query($sql);
+    ?>
 
-<div class="container text-center bg-body pb-3">
-    <h5 class="pt-4" style="font-weight: bold; font-size: 18px; color: #81CCE3;">Galeri</h5>
-    <h4 class="pt-1">Galeri INRO 2023</h4>
-    <div class="row pt-3 d-flex justify-content-center">
+    <div class="container text-center bg-body pb-3">
+      <h5 class="pt-4" style="font-weight: bold; font-size: 18px; color: #81CCE3;">Galeri</h5>
+      <h4 class="pt-1">Galeri INRO 2023</h4>
+      <div class="row pt-3 d-flex justify-content-center">
         <?php
         if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                $imagePath = "img/galeri/" . $row["namaFile"] . ".JPG";
-                echo '<div class="col-md-4 d-flex justify-content-center align-items-center my-3 card12">
+          while ($row = $result->fetch_assoc()) {
+            $imagePath = "img/galeri/" . $row["namaFile"] . ".JPG";
+            echo '<div class="col-md-4 d-flex justify-content-center align-items-center my-3 card12">
                         <img src="' . $imagePath . '" class="card-img-top" alt="Gambar Galeri">
                       </div>';
-            }
+          }
         } else {
-            echo "<p>Belum ada gambar di galeri.</p>";
+          echo "<p>Belum ada gambar di galeri.</p>";
         }
         ?>
+      </div>
+      <a href="galeri.php" class="btn py-2 text-white my-3" style="background-color: #F2713A">Lihat Lebih Banyak</a>
     </div>
-    <a href="galeri.php" class="btn py-2 text-white my-3" style="background-color: #F2713A">Lihat Lebih Banyak</a>
-</div>
 
 
-  <?php 
-  include 'komponen/footer.php'; 
-  ?>
+    <?php
+    include 'komponen/footer.php';
+    ?>
 
 
 </body>
