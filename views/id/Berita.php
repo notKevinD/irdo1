@@ -23,7 +23,7 @@ if ($result->num_rows == 0) {
 
 <body>
   <?php
-  $activePage = 'home';
+  $activePage = 'update';
   include 'komponen/navbar.php';
   ?>
 

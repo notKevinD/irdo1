@@ -9,6 +9,15 @@
                 <li class="nav-item px-2">
                     <a class="nav-link" href="id/main" <?= ($activePage == 'home') ? 'style="color: #81CCE3 !important"' : '' ?>>Home</a>
                 </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" <?= ($activePage == 'update') ? 'style="color: #81CCE3 !important"' : '' ?>>
+                        Update
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="id/berita">Berita</a></li>
+                        <li><a class="dropdown-item" href="id/pengumuman">Pengumuman</a></li>
+                    </ul>
+                    </li>
                 <li class="nav-item px-2">
                     <a class="nav-link" href="id/tentang" <?= ($activePage == 'tentang') ? 'style="color: #81CCE3 !important"' : '' ?>>Tentang</a>
                 </li>

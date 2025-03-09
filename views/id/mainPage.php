@@ -70,24 +70,24 @@
       <h5 class="pt-4" style="font-weight: bold; font-size: 18px; color: #81CCE3;">Berita</h5>
       <h4 class="pt-1">Berita Terbaru</h4>
       <div class="row pt-3 d-flex justify-content-center" style="min-height: 450px;">
-      <?php while ($berita = $result->fetch_assoc()): ?>
-        <div class="col-md-4 d-flex justify-content-center align-items-center my-3">
-          <div class="card" style="width: 20rem;">
-            <img src="img/<?= htmlspecialchars($berita['foto']) ?>" class="card-img-top" alt="Gambar Berita">
-            <div class="card-body">
-              <p class="d-inline-flex align-items-center">
-                <i class="bi bi-person text-primary me-2"></i>
-                <?= htmlspecialchars($berita['Penulis']) ?>
-                <i class="bi bi-calendar4-week text-primary me-2 ps-3"></i>
-                <?= date('d F Y', strtotime($berita['timeStamp'])) ?>
-              </p>
-              <p class="card-text text-start fw-bold"><?= htmlspecialchars($berita['Headline']) ?></p>
-              <a href="id/detailBerita/<?= htmlspecialchars($berita['slug']) ?>" class="btn text-white"
-                style="background-color: #283371;">Read More</a>
+        <?php while ($berita = $result->fetch_assoc()): ?>
+          <div class="col-md-4 d-flex justify-content-center align-items-center my-3">
+            <div class="card" style="width: 20rem;">
+              <img src="img/<?= htmlspecialchars($berita['foto']) ?>" class="card-img-top" alt="Gambar Berita">
+              <div class="card-body">
+                <p class="d-inline-flex align-items-center">
+                  <i class="bi bi-person text-primary me-2"></i>
+                  <?= htmlspecialchars($berita['Penulis']) ?>
+                  <i class="bi bi-calendar4-week text-primary me-2 ps-3"></i>
+                  <?= date('d F Y', strtotime($berita['timeStamp'])) ?>
+                </p>
+                <p class="card-text text-start fw-bold"><?= htmlspecialchars($berita['Headline']) ?></p>
+                <a href="id/detailBerita/<?= htmlspecialchars($berita['slug']) ?>" class="btn text-white"
+                  style="background-color: #283371;">Read More</a>
+              </div>
             </div>
           </div>
-        </div>
-      <?php endwhile; ?>
+        <?php endwhile; ?>
       </div>
       <a href="id/berita" class="btn py-2 text-white my-3" style="background-color: #F2713A ">Lihat Lebih Banyak</a>
     </div>
@@ -112,19 +112,20 @@
       <div class="row pt-3 d-flex justify-content-center">
         <?php while ($pengumuman = $result->fetch_assoc()): ?>
           <div class="col-md-4 d-flex justify-content-center align-items-center my-3">
-          <div class="card" style="width: 20rem;">
-            <div class="card-body text-start">
-              <p class="d-inline-flex align-items-center ">
-                <i class="bi bi-calendar4-week text-primary me-2"></i>
-                <?= date('d F Y', strtotime($pengumuman['timeStamp'])) ?>
-              </p>
-              <p class="card-text text-start fw-bold"><?= htmlspecialchars($pengumuman['headline']) ?></p>
-              <a href="id/detailPengumuman/<?= htmlspecialchars($pengumuman['slug']) ?>" class="btn" style="background-color: #81CCE3; color: #283371">Selengkapnya</a>
+            <div class="card" style="width: 20rem;">
+              <div class="card-body text-start">
+                <p class="d-inline-flex align-items-center ">
+                  <i class="bi bi-calendar4-week text-primary me-2"></i>
+                  <?= date('d F Y', strtotime($pengumuman['timeStamp'])) ?>
+                </p>
+                <p class="card-text text-start fw-bold"><?= htmlspecialchars($pengumuman['headline']) ?></p>
+                <a href="id/detailPengumuman/<?= htmlspecialchars($pengumuman['slug']) ?>" class="btn"
+                  style="background-color: #81CCE3; color: #283371">Selengkapnya</a>
+              </div>
             </div>
           </div>
-        </div>
         <?php endwhile; ?>
-    
+
       </div>
       <a href="id/pengumuman" class="btn py-2 text-white my-3" style="background-color: #F2713A ">Lihat Lebih Banyak</a>
     </div>
@@ -149,18 +150,18 @@
       <h4 class="pt-1">Unduhan Terbaru</h4>
       <div class="row pt-3 d-flex justify-content-center">
 
-      <?php while ($unduhan = $result->fetch_assoc()): ?>
-        <div class="col-md-4 d-flex justify-content-center align-items-center my-3">
-          <div class="card" style="width: 20rem;">
-            <div class="card-body">
-              <h2 class="d-inline-flex align-items-center border-bottom">
-              <?= htmlspecialchars($unduhan['jenisFile']) ?>
-              </h2>
-              <p class="card-text my-5 fw-semibold"><?= htmlspecialchars($unduhan['judul']) ?></p>
-              <a href="unduhan/<?= htmlspecialchars($unduhan['namaFile']) ?>" class="btn text-white px-3 py-2" style="background-color: #F35D42"
-                download>Unduh</a>
+        <?php while ($unduhan = $result->fetch_assoc()): ?>
+          <div class="col-md-4 d-flex justify-content-center align-items-center my-3">
+            <div class="card" style="width: 20rem;">
+              <div class="card-body">
+                <h2 class="d-inline-flex align-items-center border-bottom">
+                  <?= htmlspecialchars($unduhan['jenisFile']) ?>
+                </h2>
+                <p class="card-text my-5 fw-semibold"><?= htmlspecialchars($unduhan['judul']) ?></p>
+                <a href="unduhan/<?= htmlspecialchars($unduhan['namaFile']) ?>" class="btn text-white px-3 py-2"
+                  style="background-color: #F35D42" download>Unduh</a>
+              </div>
             </div>
-          </div>
           <?php endwhile; ?>
 
         </div>
@@ -194,6 +195,21 @@
         ?>
       </div>
       <a href="id/galeri" class="btn py-2 text-white my-3" style="background-color: #F2713A">Lihat Lebih Banyak</a>
+    </div>
+    <div class="container text-center bg-body-tertiary pb-3">
+      <h5 class="pt-4" style="font-weight: bold; font-size: 18px; color: #81CCE3;">Sponsor</h5>
+      <h4 class="pt-1">Sponsor</h4>
+      <div class="row pt-4 pb-4 d-flex justify-content-center">
+        <div class="col-md-1 d-flex justify-content-center align-items-center my-3 card12">
+          <img src="img/robotic.png" class="card-img-top" alt="Gambar Galeri">
+        </div>
+        <div class="col-md-1 d-flex justify-content-center align-items-center my-3 card12">
+          <img src="img/robotic.png" class="card-img-top" alt="Gambar Galeri">
+        </div>
+        <div class="col-md-1 d-flex justify-content-center align-items-center my-3 card12">
+          <img src="img/robotic.png" class="card-img-top" alt="Gambar Galeri">
+        </div>
+      </div>
     </div>
 
 

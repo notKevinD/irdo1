@@ -15,10 +15,10 @@
   ?>
 
 
-  <div class="container bg-body pb-3" style="padding-top: 55px;">
-    <div class="container bg-light p-5 mt-4 rounded shadow">
+  <div class="container bg-body pb-3" style="padding-top: 120px;">
+    <div class="container bg-light p-5 m-4 rounded shadow">
       <h1 class="text-center mb-4">Form Registrasi IRDO</h1>
-      <form action="../config/proses_registrasi.php" method="POST" enctype="multipart/form-data">
+      <form action="config/prosesRegistrasi" method="POST" enctype="multipart/form-data">
         <div class="mb-3">
           <label for="nama_tim" class="form-label"><i class="bi bi-people"></i> Nama Tim</label>
           <input type="text" class="form-control" id="nama_tim" name="nama_tim" required>
@@ -89,18 +89,6 @@
   include 'komponen/footer.php'; 
   ?>
 
-</body>
-
-</html>
-
-
-
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-</body>
 </body>
 
 </html>
