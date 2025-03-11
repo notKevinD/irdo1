@@ -3,7 +3,7 @@ body {
   }
 
   .logo{
-    max-height: 80px;
+    max-height: 800px !important;
   }
 
   h1{
@@ -100,11 +100,12 @@ body {
 .title {
   color: #1E3A8A; /* Biru dari palet warna */
   font-weight: 700;
+  font-size: 4.5rem;
   text-transform: uppercase;
 }
 
 .subtitle {
-  font-size: 1.5rem;
+  font-size: 2.0rem;
   font-weight: 500;
   color: #333;
 }
