@@ -18,7 +18,7 @@ if ($result->num_rows == 0) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>IRDO</title>
+  <title>Berita</title>
 </head>
 
 <body>
