@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="../../style/main.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
   
+  <link rel="icon" type="image/png" href="img/logo.png">
   <style>
     .gallery-item {
         position: relative;

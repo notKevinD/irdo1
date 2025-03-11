@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Main</title>
-<link rel="icon" type="image/png" href="img/logo.png">
+  <link rel="icon" type="image/png" href="img/logo.png">
 
 </head>
 
@@ -74,9 +74,9 @@
               </div>
             </div>
           </div>
-          
 
-          
+
+
         </div>
       </div>
     </div>
@@ -227,8 +227,8 @@
         </div>
         <a href="id/galeri" class="btn py-2 text-white my-3" style="background-color: #F2713A">Lihat Lebih Banyak</a>
       </div>
-      </div>
-      <div class="container-fluid bg-body-tertiary">
+    </div>
+    <div class="container-fluid bg-body-tertiary">
       <div class="container text-center bg-body-tertiary pb-3">
         <h5 class="pt-4" style="font-weight: bold; font-size: 18px; color: #81CCE3;">Sponsor</h5>
         <h4 class="pt-1">Sponsor</h4>
@@ -244,7 +244,7 @@
           </div>
         </div>
       </div>
-      </div>
+    </div>
 
     <?php
     include 'komponen/footer.php';

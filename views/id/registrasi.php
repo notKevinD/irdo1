@@ -7,6 +7,7 @@
   <title>Registrasi</title>
   <!-- Tambahkan SweetAlert2 -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="icon" type="image/png" href="img/logo.png">
 
 </head>
 

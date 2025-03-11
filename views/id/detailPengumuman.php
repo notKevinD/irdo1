@@ -30,6 +30,8 @@ if (!$berita) {
     <title><?= htmlspecialchars($berita['headline']) ?></title>
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/css/style.css">
+    
+  <link rel="icon" type="image/png" href="img/logo.png">
 </head>
 
 <body>
