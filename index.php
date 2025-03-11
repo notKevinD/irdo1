@@ -9,10 +9,10 @@ $request = str_replace($base_path, '', $request);
 // Routing dengan path dinamis untuk detail berita
 if (preg_match('/^\/id\/detailBerita\/([\w-]+)$/', $request, $matches)) {
     $_GET['slug'] = $matches[1]; // Ambil slug dari URL
-    require 'views/id/detailBerita/berita.php';
+    require 'views/id/detailBerita.php';
 } elseif (preg_match('/^\/id\/detailPengumuman\/([\w-]+)$/', $request, $matches)) {
     $_GET['slug'] = $matches[1]; // Ambil slug dari URL
-    require 'views/id/pengumuman/pengumuman.php';
+    require 'views/id/detailPengumuman.php';
 }else {
     switch ($request) {
         case '/id/main':

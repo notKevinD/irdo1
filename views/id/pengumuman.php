@@ -36,11 +36,13 @@
           <div class="col-md-4 d-flex justify-content-center align-items-center my-3">
           <div class="card" style="width: 20rem;">
             <div class="card-body text-start">
-              <p class="d-inline-flex align-items-center ">
+              <p class="d-inline-flex align-items-center me-3">
               <i class="bi bi-person text-primary me-2"></i>
+              <?= htmlspecialchars($pengumuman['penulis']) ?></p>
+              <p class="d-inline-flex align-items-center">
                 <i class="bi bi-calendar4-week text-primary me-2"></i>
                 <?= date('d F Y', strtotime($pengumuman['timeStamp'])) ?>
-              </p>
+        </p>
               <p class="card-text text-start fw-bold"><?= htmlspecialchars($pengumuman['headline']) ?></p>
               <a href="id/detailPengumuman/<?= htmlspecialchars($pengumuman['slug']) ?>" class="btn" style="background-color: #81CCE3; color: #283371">Selengkapnya</a>
             </div>

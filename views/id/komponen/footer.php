@@ -42,7 +42,7 @@
 
     <!-- Bottom Section -->
     <div class="footer-bottom">
-        Universitas Bandar Lampung
+    Copyright © Universitas Bandar Lampung - UKM Robotic 2025
     </div>
 
     <!-- Back to Top Button -->

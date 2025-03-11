@@ -44,11 +44,11 @@
           </div>
           <div class="col-md-4 mb-3">
             <label for="anggota2" class="form-label"><i class="bi bi-person"></i> Nama Anggota 2</label>
-            <input type="text" class="form-control" id="anggota2" name="anggota2">
+            <input type="text" class="form-control" id="anggota2" name="anggota2" required>
           </div>
           <div class="col-md-4 mb-3">
             <label for="anggota3" class="form-label"><i class="bi bi-person"></i> Nama Anggota 3</label>
-            <input type="text" class="form-control" id="anggota3" name="anggota3">
+            <input type="text" class="form-control" id="anggota3" name="anggota3" required>
           </div>
         </div>
 
