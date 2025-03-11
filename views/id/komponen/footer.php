@@ -42,7 +42,7 @@
 
     <!-- Bottom Section -->
     <div class="footer-bottom">
-        Unit Kegiatan mahasiswa Robotic - Universitas Bandar Lampung
+        Universitas Bandar Lampung
     </div>
 
     <!-- Back to Top Button -->

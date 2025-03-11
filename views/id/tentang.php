@@ -17,7 +17,7 @@
   <div class="container bg-body pb-3" style="padding-top: 120px;">
     <div class="container bg-body p-3">
       <h1 class="text-center pb-5">Tentang</h1>
-      <img src="img/ubl.png" alt="Logo" class="img-fluid w-100 p-5">
+      <img src="img/logo_irdo.png" alt="Logo" class="img-fluid w-100 p-5">
       <p style="text-align: justify;">Kontes Robot Indonesia (KRI) adalah kegiatan kompetisi tahunan mahasiswa dalam bidang rancang bangun dan rekayasa robotika yang dapat diikuti oleh seluruh mahasiswa pada perguruan tinggi di wilayah Republik Indonesia, dari berbagai K/L atau kedinasan, yang tercatat pada Pangkalan Data Pendidikan Tinggi. KRI 2024 diselenggarakan oleh Balai Pengembangan Talenta Indonesia (BPTI) Pusat Prestasi Nasional (Puspresnas) Kementerian Pendidikan, Kebudayaan, Riset dan Teknologi (Kemendikbudristek) Republik Indonesia. KRI pertama kali diselenggarakan pada tahun 2003 di bawah Direktorat Jenderal Pendidikan Tinggi, Departemen Pendidikan dan Kebudayaan pada saat itu.</p>
       
       <p style="text-align: justify;">Kontes Robot Indonesia tahun 2024 mempertandingkan 7 (tujuh) divisi sebagai berikut:</p>
