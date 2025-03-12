@@ -12,7 +12,7 @@ Website ini dibuat untuk menampilkan informasi terbaru mengenai lomba, termasuk:
 ## **Cara Instalasi**  
 1. Clone atau pull repository ini:  
    ```sh
-   git clone https://github.com/username/irdo.git
+   git clone https://github.com/notKevinD/irdo.git
    ```
 2. Import database `irdo.sql` ke **phpMyAdmin**.  
 
