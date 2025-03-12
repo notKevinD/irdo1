@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 07, 2025 at 03:15 PM
+-- Generation Time: Mar 12, 2025 at 09:23 AM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.8
 
@@ -94,15 +94,16 @@ CREATE TABLE `pengumuman` (
   `kontenInggris` text NOT NULL,
   `slug` varchar(50) NOT NULL,
   `headlineInggris` varchar(50) NOT NULL,
-  `foto` varchar(30) NOT NULL
+  `foto` varchar(30) NOT NULL,
+  `penulis` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `pengumuman`
 --
 
-INSERT INTO `pengumuman` (`id`, `timeStamp`, `headline`, `konten`, `kontenInggris`, `slug`, `headlineInggris`, `foto`) VALUES
-(1, '2025-03-07 13:03:59', 'halo', 'asdasdadasd', 'asdsadsadsa', '1', 'asdasdsa', 'robotic.png');
+INSERT INTO `pengumuman` (`id`, `timeStamp`, `headline`, `konten`, `kontenInggris`, `slug`, `headlineInggris`, `foto`, `penulis`) VALUES
+(2, '2025-03-11 05:14:40', 'halo', 'dkfaksnlk', 'kldflkasndlk', '1', 'hasdnl', 'robotic.png', 'admin');
 
 -- --------------------------------------------------------
 
@@ -130,7 +131,23 @@ CREATE TABLE `registrasi` (
 --
 
 INSERT INTO `registrasi` (`id`, `nama_tim`, `asal_sekolah`, `anggota1`, `anggota2`, `anggota3`, `pembimbing`, `nomor_hp`, `email`, `kategori`, `bukti_pembayaran`, `created_at`) VALUES
-(1, 'kevin', 'kevin', 'kevin', 'kevin', 'kevin', 'kevin', '123123123123', 'kevindarmawan48@gmail.com', '3on3soccer', 'bukti_67c39ef64e4053.78758721.jpg', '2025-03-01 23:57:42');
+(14, 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'kevindarmawan48@gmail.com', '3on3soccer', 'bukti_67cef309e48720.86238038.png', '2025-03-10 14:11:21'),
+(15, 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'kevindarmawan48@gmail.com', '3on3soccer', 'bukti_67cef33cd5fc51.50243501.png', '2025-03-10 14:12:12'),
+(16, 'l', 'l', 'l', 'l', 'l', 'l', 'l', 'alfredo.22421029@student.ubl.ac.id', '3on3soccer', 'bukti_67cef63833eeb9.00652572.png', '2025-03-10 14:24:56'),
+(17, 'l', 'l', 'l', 'l', 'l', 'l', 'l', 'kevindarmawan48@gmail.com', '3on3soccer', 'bukti_67cef670b63781.59145970.png', '2025-03-10 14:25:52'),
+(18, 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'alfredo.22421029@student.ubl.ac.id', '3on3soccer', 'bukti_67cef880911c64.30378563.png', '2025-03-10 14:34:40'),
+(19, 'm', 'm', 'm', 'm', 'm', 'm', 'm', 'muhammadriza@ubl.ac.id', '3on3soccer', 'bukti_67cef91057be28.59267166.png', '2025-03-10 14:37:04'),
+(20, 'm', 'm', 'm', 'm', 'm', 'm', 'm', 'muhammadriza@ubl.ac.id', '3on3soccer', 'bukti_67cef963efd030.03103856.png', '2025-03-10 14:38:27'),
+(21, 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'kevindarmawan48@gmail.com', '3on3soccer', 'bukti_67cef9e839f8c0.23702174.png', '2025-03-10 14:40:40'),
+(22, 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'kevindarmawan48@gmail.com', '3on3soccer', 'bukti_67cef9f4abefd2.07766247.png', '2025-03-10 14:40:52'),
+(23, 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'kevindarmawan48@gmail.com', '3on3soccer', 'bukti_67cefa256cb7d0.32407953.png', '2025-03-10 14:41:41'),
+(24, 'm', 'm', 'm', 'm', 'm', 'm', 'm', 'sigitmokolo@gmail.com', '3on3soccer', 'bukti_67cefab45c6c54.70598161.png', '2025-03-10 14:44:04'),
+(25, 'k', 'k', 'k', 'k', 'k', 'k', '6288291237471', 'kevindarmawan48@gmail.com', '3on3soccer', 'bukti_67cefb6add12e9.75778076.png', '2025-03-10 14:47:06'),
+(26, 'k', 'k', 'k', 'k', 'k', 'k', '6288291237471', 'kevindarmawan48@gmail.com', '3on3soccer', 'bukti_67cefb866ae659.15354563.png', '2025-03-10 14:47:34'),
+(27, '.', '.', '.', '.', '.', '.', '092', 'kevindarmawan48@gmail.com', '3on3soccer', 'bukti_67cefbfcd96b21.23767471.png', '2025-03-10 14:49:32'),
+(28, '.', '.', '.', '.', '.', '.', '092', 'kevindarmawan48@gmail.com', '3on3soccer', 'bukti_67cefc458b6236.55286631.png', '2025-03-10 14:50:45'),
+(29, 'a', 'k', 'k', 'k', 'k', 'k', '000', 'kevindarmawan48@gmail.com', 'robotcreative', 'bukti_67cf9d82e2bf33.58640907.png', '2025-03-11 02:18:42'),
+(30, 'a', 'n', 'nn', 'd', 'd', 'n', '08829', 'muhammadriza@ubl.ac.id', '3on3soccer', 'bukti_67cfcb60e077e6.63979454.jpeg', '2025-03-11 05:34:24');
 
 -- --------------------------------------------------------
 
@@ -142,15 +159,10 @@ CREATE TABLE `unduhan` (
   `id` int(11) NOT NULL,
   `judul` varchar(50) NOT NULL,
   `namaFile` varchar(50) NOT NULL,
-  `jenisFile` varchar(15) NOT NULL
+  `jenisFile` varchar(15) NOT NULL,
+  `judulInggris` varchar(30) NOT NULL,
+  `namaFileInggris` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `unduhan`
---
-
-INSERT INTO `unduhan` (`id`, `judul`, `namaFile`, `jenisFile`) VALUES
-(2, 'Tech Master', 'TechMaster.pdf', 'PDF');
 
 --
 -- Indexes for dumped tables
@@ -207,13 +219,13 @@ ALTER TABLE `galeri`
 -- AUTO_INCREMENT for table `pengumuman`
 --
 ALTER TABLE `pengumuman`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `registrasi`
 --
 ALTER TABLE `registrasi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `unduhan`
