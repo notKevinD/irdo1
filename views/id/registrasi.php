@@ -82,7 +82,7 @@
 
         <div class="mb-3">
           <label for="bukti_pembayaran" class="form-label"><i class="bi bi-credit-card"></i> Bukti Pembayaran
-            (Gambar)</label>
+            (.png/.jpg)</label>
           <input type="file" class="form-control" id="bukti_pembayaran" name="bukti_pembayaran" accept="image/*"
             required>
         </div>

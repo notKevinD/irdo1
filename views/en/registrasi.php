@@ -71,7 +71,7 @@
         </div>
 
         <div class="mb-3">
-          <label for="kategori" class="form-label"><i class="bi bi-trophy"></i>Competition Category"</label>
+          <label for="kategori" class="form-label"><i class="bi bi-trophy"></i>Competition Category</label>
           <select class="form-select" id="kategori" name="kategori" required>
             <option selected disabled>Choose Category</option>
             <option value="3on3soccer">3 on 3 Soccer</option>
@@ -82,7 +82,7 @@
 
         <div class="mb-3">
           <label for="bukti_pembayaran" class="form-label"><i class="bi bi-credit-card"></i> Proof of Payment
-            (Picture)</label>
+            (.png/.jpg)</label>
           <input type="file" class="form-control" id="bukti_pembayaran" name="bukti_pembayaran" accept="image/*"
             required>
         </div>
