@@ -17,5 +17,3 @@ Website ini dibuat untuk menampilkan informasi terbaru mengenai lomba, termasuk:
 2. Import database `irdo.sql` ke **phpMyAdmin**.  
 
 ---
-
-Kalau ada informasi tambahan seperti **persyaratan sistem**, **konfigurasi lingkungan**, atau **penggunaan**, bisa ditambahkan juga. Mau saya bantu melengkapinya? 😊🚀
