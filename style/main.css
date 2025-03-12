@@ -52,7 +52,7 @@ body {
     transform: translateY(-5px);
   }
   .footer {
-    background-color: #81CCE3;
+    background-color: #283371;
     color: white;
     padding-top: 30px;
   }
@@ -63,7 +63,7 @@ body {
   }
 
   .footer a:hover {
-    color: #283371 !important;
+    color:  #81CCE3 !important;
     text-decoration: underline;
   }
   .footer-logo {
@@ -113,7 +113,7 @@ body {
 .university {
   font-size: 1.3rem;
   font-weight: 600;
-  color: #F59E0B; /* Warna kuning/oranye */
+  color: #000; /* Warna kuning/oranye */
 }
 
 .logo:hover {

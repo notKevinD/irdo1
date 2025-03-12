@@ -2,7 +2,7 @@
 require 'config/database.php'; // Sesuaikan dengan koneksi database
 
 // Ambil semua berita
-$query = "SELECT headline, penulis, timeStamp, foto,slug FROM berita ORDER BY timeStamp DESC";
+$query = "SELECT headlineInggris, penulis, timeStamp, foto,slug FROM berita ORDER BY timeStamp DESC";
 $result = $conn->query($query);
 
 // Jika tidak ada berita, tampilkan pesan
@@ -18,7 +18,7 @@ if ($result->num_rows == 0) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Berita</title>
+  <title>News</title>
 
   <link rel="icon" type="image/png" href="img/logo.png">
 </head>
@@ -30,7 +30,7 @@ if ($result->num_rows == 0) {
   ?>
 
   <div class="container text-center bg-body pb-3" style="padding-top: 100px;">
-    <h1 class="">Berita</h1>
+    <h1 class="">News</h1>
     <div class="row pt-3 px-5 d-flex justify-content-center" style="min-height : 500px">
 
       <?php while ($berita = $result->fetch_assoc()): ?>
@@ -44,8 +44,8 @@ if ($result->num_rows == 0) {
                 <i class="bi bi-calendar4-week text-primary me-2 ps-3"></i>
                 <?= date('d F Y', strtotime($berita['timeStamp'])) ?>
               </p>
-              <p class="card-text text-start fw-bold"><?= htmlspecialchars($berita['headline']) ?></p>
-              <a href="id/detailBerita/<?= htmlspecialchars($berita['slug']) ?>" class="btn text-white"
+              <p class="card-text text-start fw-bold"><?= htmlspecialchars($berita['headlineInggris']) ?></p>
+              <a href="en/detailBerita/<?= htmlspecialchars($berita['slug']) ?>" class="btn text-white"
                 style="background-color: #283371;">Read More</a>
             </div>
           </div>

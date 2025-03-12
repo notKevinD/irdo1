@@ -10,9 +10,15 @@ $request = str_replace($base_path, '', $request);
 if (preg_match('/^\/id\/detailBerita\/([\w-]+)$/', $request, $matches)) {
     $_GET['slug'] = $matches[1]; // Ambil slug dari URL
     require 'views/id/detailBerita.php';
+}else if (preg_match('/^\/en\/detailBerita\/([\w-]+)$/', $request, $matches)) {
+    $_GET['slug'] = $matches[1]; // Ambil slug dari URL
+    require 'views/en/detailBerita.php';
 } elseif (preg_match('/^\/id\/detailPengumuman\/([\w-]+)$/', $request, $matches)) {
     $_GET['slug'] = $matches[1]; // Ambil slug dari URL
     require 'views/id/detailPengumuman.php';
+}elseif (preg_match('/^\/en\/detailPengumuman\/([\w-]+)$/', $request, $matches)) {
+    $_GET['slug'] = $matches[1]; // Ambil slug dari URL
+    require 'views/en/detailPengumuman.php';
 }else {
     switch ($request) {
         case '/id/main':
@@ -36,6 +42,30 @@ if (preg_match('/^\/id\/detailBerita\/([\w-]+)$/', $request, $matches)) {
         case '/id/berita':
             require 'views/id/berita.php';
             break;
+
+            case '/en/main':
+                require 'views/en/mainPage.php';
+                break;
+            case '/en/tentang':
+                require 'views/en/tentang.php';
+                break;
+            case '/en/galeri':
+                require 'views/en/galeri.php';
+                break;
+            case '/en/registrasi':
+                require 'views/en/registrasi.php';
+                break;
+            case '/en/unduhan':
+                require 'views/en/unduhan.php';
+                break;
+            case '/en/pengumuman':
+                require 'views/en/pengumuman.php';
+                break;
+            case '/en/berita':
+                require 'views/en/berita.php';
+                break;
+
+        
 
         case '/config/prosesRegistrasi':
             require 'config/proses_registrasi.php';

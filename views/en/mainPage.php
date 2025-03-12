@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Main</title>
+  <title>Home</title>
   <link rel="icon" type="image/png" href="img/logo.png">
 
 </head>
@@ -44,9 +44,9 @@
               <div class="card-body">
                 <span class="badge bg-warning text-white">OFFLINE</span>
                 <h5 class="card-title mt-2">ROBOT SOCCER COMPETITION</h5>
-                <p class="card-text">Biaya: <strong>500.000,00</strong></p>
-                <p class="text-muted">Masa Registrasi sampai <br><strong>22 April 2025</strong></p>
-                <a href="#" class="btn btn-primary">Juknis Lomba</a>
+                <p class="card-text">Fee: <strong>500.000,00</strong></p>
+                <p class="text-muted">Registration period until <br><strong>22 April 2025</strong></p>
+                <a href="#" class="btn btn-primary">Technical Guidelines</a>
               </div>
             </div>
           </div>
@@ -56,9 +56,9 @@
               <div class="card-body">
                 <span class="badge bg-warning text-white">OFFLINE</span>
                 <h5 class="card-title mt-2">ROBOT CREATIVE COMPETITION</h5>
-                <p class="card-text">Biaya: <strong>500.000,00</strong></p>
-                <p class="text-muted">Masa Registrasi sampai <br><strong>22 April 2025</strong></p>
-                <a href="#" class="btn btn-primary">Juknis Lomba</a>
+                <p class="card-text">Fee: <strong>500.000,00</strong></p>
+                <p class="text-muted">Registration period until <br><strong>22 April 2025</strong></p>
+                <a href="#" class="btn btn-primary">Technical Guidelines</a>
               </div>
             </div>
           </div>
@@ -68,9 +68,9 @@
               <div class="card-body">
                 <span class="badge bg-success text-white">ONLINE</span>
                 <h5 class="card-title mt-2">CAPSTONE PROJECT</h5>
-                <p class="card-text">Biaya: <strong>-</strong></p>
-                <p class="text-muted">Masa Registrasi sampai <br><strong>22 April 2025</strong></p>
-                <a href="#" class="btn btn-primary">Juknis Lomba</a>
+                <p class="card-text">Fee: <strong>-</strong></p>
+                <p class="text-muted">Registration period until <br><strong>22 April 2025</strong></p>
+                <a href="#" class="btn btn-primary">Technical Guidelines</a>
               </div>
             </div>
           </div>
@@ -85,7 +85,7 @@
     require 'config/database.php'; // Sesuaikan dengan koneksi database
     
     // Ambil semua berita
-    $query = "SELECT Headline, Penulis, timeStamp,slug,foto FROM berita ORDER BY timeStamp DESC LIMIT 3";
+    $query = "SELECT headlineInggris, Penulis, timeStamp,slug,foto FROM berita ORDER BY timeStamp DESC LIMIT 3";
     $result = $conn->query($query);
 
     // Jika tidak ada berita, tampilkan pesan
@@ -96,8 +96,8 @@
     ?>
     <div class="container-fluid bg-body-tertiary">
       <div class="container text-center bg-body-tertiary pb-3">
-        <h5 class="pt-4" style="font-weight: bold; font-size: 18px; color: #81CCE3;">Berita</h5>
-        <h4 class="pt-1">Berita Terbaru</h4>
+        <h5 class="pt-4" style="font-weight: bold; font-size: 18px; color: #81CCE3;">News</h5>
+        <h4 class="pt-1">Recent News</h4>
         <div class="row pt-3 d-flex justify-content-center" style="min-height: 450px;">
           <?php while ($berita = $result->fetch_assoc()): ?>
             <div class="col-md-4 d-flex justify-content-center align-items-center my-3">
@@ -110,15 +110,15 @@
                     <i class="bi bi-calendar4-week text-primary me-2 ps-3"></i>
                     <?= date('d F Y', strtotime($berita['timeStamp'])) ?>
                   </p>
-                  <p class="card-text text-start fw-bold"><?= htmlspecialchars($berita['Headline']) ?></p>
-                  <a href="id/detailBerita/<?= htmlspecialchars($berita['slug']) ?>" class="btn text-white"
+                  <p class="card-text text-start fw-bold"><?= htmlspecialchars($berita['headlineInggris']) ?></p>
+                  <a href="en/detailBerita/<?= htmlspecialchars($berita['slug']) ?>" class="btn text-white"
                     style="background-color: #283371;">Read More</a>
                 </div>
               </div>
             </div>
           <?php endwhile; ?>
         </div>
-        <a href="id/berita" class="btn py-2 text-white my-3" style="background-color: #F2713A ">Lihat Lebih Banyak</a>
+        <a href="en/berita" class="btn py-2 text-white my-3" style="background-color: #F2713A ">View More</a>
       </div>
     </div>
 
@@ -137,8 +137,8 @@
     ?>
     <div class="container-fluid bg-body">
       <div class="container text-center bg-body pb-3">
-        <h5 class="pt-4" style="font-weight: bold; font-size: 18px; color: #81CCE3;">Pengumuman</h5>
-        <h4 class="pt-1">Pengumuman Terbaru</h4>
+        <h5 class="pt-4" style="font-weight: bold; font-size: 18px; color: #81CCE3;">Announcement</h5>
+        <h4 class="pt-1">Recent Announcement</h4>
         <div class="row pt-3 d-flex justify-content-center">
           <?php while ($pengumuman = $result->fetch_assoc()): ?>
             <div class="col-md-4 d-flex justify-content-center align-items-center my-3">
@@ -148,8 +148,8 @@
                     <i class="bi bi-calendar4-week text-primary me-2"></i>
                     <?= date('d F Y', strtotime($pengumuman['timeStamp'])) ?>
                   </p>
-                  <p class="card-text text-start fw-bold"><?= htmlspecialchars($pengumuman['headline']) ?></p>
-                  <a href="id/detailPengumuman/<?= htmlspecialchars($pengumuman['slug']) ?>" class="btn"
+                  <p class="card-text text-start fw-bold"><?= htmlspecialchars($pengumuman['headlineInggris']) ?></p>
+                  <a href="en/detailPengumuman/<?= htmlspecialchars($pengumuman['slug']) ?>" class="btn"
                     style="background-color: #81CCE3; color: #283371">Selengkapnya</a>
                 </div>
               </div>
@@ -157,8 +157,7 @@
           <?php endwhile; ?>
 
         </div>
-        <a href="id/pengumuman" class="btn py-2 text-white my-3" style="background-color: #F2713A ">Lihat Lebih
-          Banyak</a>
+        <a href="en/pengumuman" class="btn py-2 text-white my-3" style="background-color: #F2713A ">View More</a>
       </div>
     </div>
 
@@ -177,8 +176,8 @@
     ?>
     <div class="container-fluid bg-body-tertiary">
       <div class="container text-center bg-body-tertiary pb-3">
-        <h5 class="pt-4" style="font-weight: bold; font-size: 18px; color: #81CCE3;">Unduhan</h5>
-        <h4 class="pt-1">Unduhan Terbaru</h4>
+        <h5 class="pt-4" style="font-weight: bold; font-size: 18px; color: #81CCE3;">Assets</h5>
+        <h4 class="pt-1">Recent Assets</h4>
         <div class="row pt-3 d-flex justify-content-center">
 
           <?php while ($unduhan = $result->fetch_assoc()): ?>
@@ -190,14 +189,14 @@
                   </h2>
                   <p class="card-text my-5 fw-semibold"><?= htmlspecialchars($unduhan['judul']) ?></p>
                   <a href="unduhan/<?= htmlspecialchars($unduhan['namaFile']) ?>" class="btn text-white px-3 py-2"
-                    style="background-color: #F35D42" download>Unduh</a>
+                    style="background-color: #F35D42" download>Download</a>
                 </div>
               </div>
             <?php endwhile; ?>
 
           </div>
         </div>
-        <a href="id/unduhan" class="btn py-2 text-white my-3" style="background-color: #F2713A ">Lihat Lebih Banyak</a>
+        <a href="en/unduhan" class="btn py-2 text-white my-3" style="background-color: #F2713A ">View More</a>
       </div>
     </div>
     <?php
@@ -209,8 +208,8 @@
     ?>
     <div class="container-fluid bg-body">
       <div class="container text-center bg-body pb-3">
-        <h5 class="pt-4" style="font-weight: bold; font-size: 18px; color: #81CCE3;">Galeri</h5>
-        <h4 class="pt-1">Galeri INRO 2023</h4>
+        <h5 class="pt-4" style="font-weight: bold; font-size: 18px; color: #81CCE3;">Gallery</h5>
+        <h4 class="pt-1">INRO 2023 Gallery</h4>
         <div class="row pt-3 d-flex justify-content-center">
           <?php
           if ($result->num_rows > 0) {
@@ -225,13 +224,13 @@
           }
           ?>
         </div>
-        <a href="id/galeri" class="btn py-2 text-white my-3" style="background-color: #F2713A">Lihat Lebih Banyak</a>
+        <a href="en/galeri" class="btn py-2 text-white my-3" style="background-color: #F2713A">View More</a>
       </div>
     </div>
     <div class="container-fluid bg-body-tertiary">
       <div class="container text-center bg-body-tertiary pb-3">
-        <h5 class="pt-4" style="font-weight: bold; font-size: 18px; color: #81CCE3;">Sponsor</h5>
-        <h4 class="pt-1">Sponsor</h4>
+        <h5 class="pt-4" style="font-weight: bold; font-size: 18px; color: #81CCE3;">Sponsors</h5>
+        <h4 class="pt-1">Sponsors</h4>
         <div class="row pt-4 pb-4 d-flex justify-content-center">
           <div class="col-md-1 d-flex justify-content-center align-items-center my-3 card12">
             <img src="img/robotic.png" class="card-img-top" alt="Gambar Galeri">
