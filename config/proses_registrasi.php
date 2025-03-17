@@ -71,12 +71,12 @@ if ($stmt->execute()) {
     document.addEventListener('DOMContentLoaded', function() {
         let modal = document.createElement('div');
         modal.innerHTML = `
-            <div style='position: fixed; top: 20%; left: 50%; transform: translate(-50%, -50%);
-                        background-color: #283371; color: white; padding: 20px; border-radius: 5px;
+            <div style='position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+                        background-color: #283371; color: white; padding: 200px; border-radius: 5px;
                         text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 9999;'>
-                <p style='margin: 0; font-size: 18px; font-weight: bold;'>Registration Complete</p>
-                <button onclick='window.location.href=\"../id/main\"' style='margin-top: 10px; background: white; 
-                        color: #283371; border: none; padding: 8px 12px; border-radius: 5px; cursor: pointer;'>Back</button>
+                <p style='margin: 0; font-size: 40px; font-weight: bold;'>Registration Complete</p>
+                <button onclick='window.location.href=\"../id/main\"' style='margin-top: 50px; background: white; 
+                        color: #283371; border: none; padding: 16px 24px; border-radius: 5px; cursor: pointer;'>Back</button>
             </div>
         `;
         document.body.appendChild(modal);
@@ -87,12 +87,12 @@ if ($stmt->execute()) {
     document.addEventListener('DOMContentLoaded', function() {
         let modal = document.createElement('div');
         modal.innerHTML = `
-            <div style='position: fixed; top: 20%; left: 50%; transform: translate(-50%, -50%);
-                        background: salmon; color: white; padding: 20px; border-radius: 5px;
+            <div style='position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+                        background-color: salmon; color: white; padding: 200px; border-radius: 5px;
                         text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 9999;'>
-                <p style='margin: 0; font-size: 18px; font-weight: bold;'>Registration Failed</p>
-                <button onclick='window.history.back()' style='margin-top: 10px; background: white; 
-                        color: salmon; border: none; padding: 8px 12px; border-radius: 5px; cursor: pointer;'>Back</button>
+                <p style='margin: 0; font-size: 40px; font-weight: bold;'>Registration Failed</p>
+                <button onclick='window.location.href=\"../id/main\"' style='margin-top: 50px; background: white; 
+                        color: salmon; border: none; padding: 16px 24px; border-radius: 5px; cursor: pointer;'>Back</button>
             </div>
         `;
         document.body.appendChild(modal);

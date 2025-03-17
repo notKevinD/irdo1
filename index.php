@@ -64,7 +64,9 @@ if (preg_match('/^\/id\/detailBerita\/([\w-]+)$/', $request, $matches)) {
             case '/en/berita':
                 require 'views/en/berita.php';
                 break;
-
+            case '/tes':
+                require 'views/tes.php';
+                break;
         
 
         case '/config/prosesRegistrasi':

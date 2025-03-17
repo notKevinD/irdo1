@@ -8,6 +8,8 @@
   <!-- Tambahkan SweetAlert2 -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <link rel="icon" type="image/png" href="img/logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 
 </head>
 
@@ -55,15 +57,21 @@
 
         <!-- Nama Pembimbing & Nomor HP dalam satu row -->
         <div class="row">
-          <div class="col-md-6 mb-3">
-            <label for="pembimbing" class="form-label"><i class="bi bi-person-badge"></i>Mentor Teacher's Name</label>
-            <input type="text" class="form-control" id="pembimbing" name="pembimbing" required>
-          </div>
-          <div class="col-md-6 mb-3">
-            <label for="nomor_hp" class="form-label"><i class="bi bi-telephone"></i>Phone Number</label>
-            <input type="number" class="form-control" id="nomor_hp" name="nomor_hp" required>
-          </div>
+    <div class="col-md-6 mb-3">
+        <label for="pembimbing" class="form-label"><i class="bi bi-person-badge"></i> Mentor Teacher's Name</label>
+        <input type="text" class="form-control" id="pembimbing" name="pembimbing" required>
+    </div>
+
+    <div class="col-md-6 mb-3">
+        <label for="nomor_hp" class="form-label d-flex align-items-center">
+            <i class="bi bi-telephone"></i> Phone Number
+        </label>
+        <div class="input-group">
+            <input type="tel" class="form-control" id="nomor_hp" name="nomor_hp" required>
         </div>
+    </div>
+</div>
+
 
         <div class="mb-3">
           <label for="email" class="form-label"><i class="bi bi-envelope"></i> Email</label>
@@ -100,6 +108,22 @@
   <?php
   include 'komponen/footer.php';
   ?>
+
+
+<script>
+    var input = document.querySelector("#nomor_hp");
+    var iti = window.intlTelInput(input, {
+        initialCountry: "id",
+        preferredCountries: ["id", "us", "sg"],
+        separateDialCode: true,
+        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
+    });
+
+    // Gabungkan kode negara dan nomor telepon sebelum submit form
+    document.querySelector("form").addEventListener("submit", function() {
+        input.value = "+" + iti.getSelectedCountryData().dialCode + input.value;
+    });
+</script>
 
 </body>
 

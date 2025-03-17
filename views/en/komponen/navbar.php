@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg fixed-top shadow z-index-1030 py-3" data-bs-theme="dark" style="opacity: 99%;">
     <div class="container-xxl">
         <a class="navbar-brand ms-5" href="en/main">
-        <img src="../img/logo_irdo.png" alt="irdo" style="max-width: 120px;"></a>
+            <img src="../img/logo_irdo.png" alt="irdo" style="max-width: 120px;"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -10,17 +10,19 @@
                 <li class="nav-item px-2">
                     <a class="nav-link" href="en/main" <?= ($activePage == 'home') ? 'style="color: #81CCE3 !important"' : '' ?>>Home</a>
                 </li>
+
+                <li class="nav-item px-2">
+                    <a class="nav-link" href="en/tentang" <?= ($activePage == 'tentang') ? 'style="color: #81CCE3 !important"' : '' ?>>About</a>
+                </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" <?= ($activePage == 'update') ? 'style="color: #81CCE3 !important"' : '' ?>>
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false" <?= ($activePage == 'update') ? 'style="color: #81CCE3 !important"' : '' ?>>
                         Update
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="en/berita">News</a></li>
                         <li><a class="dropdown-item" href="en/pengumuman">Announcement</a></li>
                     </ul>
-                    </li>
-                <li class="nav-item px-2">
-                    <a class="nav-link" href="en/tentang" <?= ($activePage == 'tentang') ? 'style="color: #81CCE3 !important"' : '' ?>>About</a>
                 </li>
                 <li class="nav-item px-2">
                     <a class="nav-link" href="en/unduhan" <?= ($activePage == 'unduhan') ? 'style="color: #81CCE3 !important"' : '' ?>>Assets</a>
@@ -29,18 +31,18 @@
                     <a class="nav-link" href="en/registrasi" <?= ($activePage == 'registrasi') ? 'style="color: #81CCE3 !important"' : '' ?>>Register</a>
                 </li>
             </ul>
-            
+
             <!-- Dropdown Bahasa di Pojok Kanan -->
             <div class="dropdown ms-auto">
                 <button class="btn btn-danger dropdown-toggle" type="button" data-bs-toggle="dropdown">
                     English
                 </button>
                 <ul class="dropdown-menu">
-                <li>
-                    <a class="dropdown-item" href="<?php 
-                        echo str_replace('/en/', '/id/', $_SERVER['REQUEST_URI']); 
-                    ?>">Indonesia</a>
-                </li>
+                    <li>
+                        <a class="dropdown-item" href="<?php
+                        echo str_replace('/en/', '/id/', $_SERVER['REQUEST_URI']);
+                        ?>">Indonesia</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -51,9 +53,9 @@
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <base href="http://localhost/irdo1/">
-  <link rel="stylesheet" href="style/main.css">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+<base href="http://localhost/irdo1/">
+<link rel="stylesheet" href="style/main.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">

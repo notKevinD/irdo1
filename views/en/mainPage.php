@@ -82,45 +82,51 @@
     </div>
 
     <?php
-    require 'config/database.php'; // Sesuaikan dengan koneksi database
-    
-    // Ambil semua berita
-    $query = "SELECT headlineInggris, Penulis, timeStamp,slug,foto FROM berita ORDER BY timeStamp DESC LIMIT 3";
-    $result = $conn->query($query);
+require 'config/database.php'; // Sesuaikan dengan koneksi database
 
-    // Jika tidak ada berita, tampilkan pesan
-    if ($result->num_rows == 0) {
-      echo "<h2>Tidak ada berita yang tersedia!</h2>";
-      exit;
-    }
-    ?>
-    <div class="container-fluid bg-body-tertiary">
-      <div class="container text-center bg-body-tertiary pb-3">
-        <h5 class="pt-4" style="font-weight: bold; font-size: 18px; color: #81CCE3;">News</h5>
-        <h4 class="pt-1">Recent News</h4>
-        <div class="row pt-3 d-flex justify-content-center" style="min-height: 450px;">
-          <?php while ($berita = $result->fetch_assoc()): ?>
-            <div class="col-md-4 d-flex justify-content-center align-items-center my-3">
-              <div class="card" style="width: 20rem;">
-                <img src="img/<?= htmlspecialchars($berita['foto']) ?>" class="card-img-top" alt="Gambar Berita">
-                <div class="card-body">
-                  <p class="d-inline-flex align-items-center">
-                    <i class="bi bi-person text-primary me-2"></i>
-                    <?= htmlspecialchars($berita['Penulis']) ?>
-                    <i class="bi bi-calendar4-week text-primary me-2 ps-3"></i>
-                    <?= date('d F Y', strtotime($berita['timeStamp'])) ?>
-                  </p>
-                  <p class="card-text text-start fw-bold"><?= htmlspecialchars($berita['headlineInggris']) ?></p>
-                  <a href="en/detailBerita/<?= htmlspecialchars($berita['slug']) ?>" class="btn text-white"
-                    style="background-color: #283371;">Read More</a>
-                </div>
+// Pastikan koneksi database ada
+if (!$conn) {
+    die("Koneksi database gagal!");
+}
+
+// Ambil semua berita
+$query = "SELECT headlineInggris, Penulis, timeStamp, slug, foto FROM berita ORDER BY timeStamp DESC LIMIT 3";
+$result = $conn->query($query);
+?>
+
+<div class="container-fluid bg-body-tertiary">
+  <div class="container text-center bg-body-tertiary pb-3">
+    <h5 class="pt-4" style="font-weight: bold; font-size: 18px; color: #81CCE3;">News</h5>
+    <h4 class="pt-1">Recent News</h4>
+    
+    <?php if ($result->num_rows == 0): ?>
+      <h2 style="padding: 150px 0px;">There is no news available!</h2>
+    <?php else: ?>
+      <div class="row pt-3 d-flex justify-content-center" style="min-height: 450px;">
+        <?php while ($berita = $result->fetch_assoc()): ?>
+          <div class="col-md-4 d-flex justify-content-center align-items-center my-3">
+            <div class="card" style="width: 20rem;">
+              <img src="img/<?= htmlspecialchars($berita['foto']) ?>" class="card-img-top" alt="Gambar Berita">
+              <div class="card-body">
+                <p class="d-inline-flex align-items-center">
+                  <i class="bi bi-person text-primary me-2"></i>
+                  <?= htmlspecialchars($berita['Penulis']) ?>
+                  <i class="bi bi-calendar4-week text-primary me-2 ps-3"></i>
+                  <?= date('d F Y', strtotime($berita['timeStamp'])) ?>
+                </p>
+                <p class="card-text text-start fw-bold"><?= htmlspecialchars($berita['headlineInggris']) ?></p>
+                <a href="en/detailBerita/<?= htmlspecialchars($berita['slug']) ?>" class="btn text-white"
+                  style="background-color: #283371;">Read More</a>
               </div>
             </div>
-          <?php endwhile; ?>
-        </div>
-        <a href="en/berita" class="btn py-2 text-white my-3" style="background-color: #F2713A ">View More</a>
+          </div>
+        <?php endwhile; ?>
       </div>
-    </div>
+      <a href="en/berita" class="btn py-2 text-white my-3" style="background-color: #F2713A">View More</a>
+    <?php endif; ?>
+  </div>
+</div>
+
 
     <?php
     require 'config/database.php'; // Sesuaikan dengan koneksi database
@@ -130,11 +136,10 @@
     $result = $conn->query($query);
 
     // Jika tidak ada berita, tampilkan pesan
-    if ($result->num_rows == 0) {
-      echo "<h2>Tidak ada pengumuman yang tersedia!</h2>";
-      exit;
-    }
     ?>
+    <?php if ($result->num_rows == 0): ?>
+      <h2 style="padding: 150px 0px;">There is no Announcement available!</h2>
+    <?php else: ?>
     <div class="container-fluid bg-body">
       <div class="container text-center bg-body pb-3">
         <h5 class="pt-4" style="font-weight: bold; font-size: 18px; color: #81CCE3;">Announcement</h5>
@@ -158,6 +163,7 @@
 
         </div>
         <a href="en/pengumuman" class="btn py-2 text-white my-3" style="background-color: #F2713A ">View More</a>
+        <?php endif; ?>
       </div>
     </div>
 
@@ -167,13 +173,10 @@
     // Ambil semua berita
     $query = "SELECT * FROM unduhan ORDER BY id DESC LIMIT 3";
     $result = $conn->query($query);
-
-    // Jika tidak ada berita, tampilkan pesan
-    if ($result->num_rows == 0) {
-      echo "<h2>Tidak ada unduhan yang tersedia!</h2>";
-      exit;
-    }
     ?>
+    <?php if ($result->num_rows == 0): ?>
+      <h2 style="padding: 150px 0px;">There is no Assets available!</h2>
+    <?php else: ?>
     <div class="container-fluid bg-body-tertiary">
       <div class="container text-center bg-body-tertiary pb-3">
         <h5 class="pt-4" style="font-weight: bold; font-size: 18px; color: #81CCE3;">Assets</h5>
@@ -197,15 +200,18 @@
           </div>
         </div>
         <a href="en/unduhan" class="btn py-2 text-white my-3" style="background-color: #F2713A ">View More</a>
+        <?php endif; ?>
       </div>
     </div>
     <?php
     include 'config/database.php';
-
     // Query untuk mengambil 3 data terakhir dari tabel galeri
     $sql = "SELECT namaFile FROM galeri ORDER BY id LIMIT 3";
     $result = $conn->query($sql);
     ?>
+     <?php if ($result->num_rows == 0): ?>
+      <h2 style="padding: 150px 0px;">There is no Photo available!</h2>
+    <?php else: ?>
     <div class="container-fluid bg-body">
       <div class="container text-center bg-body pb-3">
         <h5 class="pt-4" style="font-weight: bold; font-size: 18px; color: #81CCE3;">Gallery</h5>
@@ -225,6 +231,7 @@
           ?>
         </div>
         <a href="en/galeri" class="btn py-2 text-white my-3" style="background-color: #F2713A">View More</a>
+        <?php endif; ?>
       </div>
     </div>
     <div class="container-fluid bg-body-tertiary">
