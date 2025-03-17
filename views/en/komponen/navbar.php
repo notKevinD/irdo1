@@ -25,7 +25,7 @@
                     </ul>
                 </li>
                 <li class="nav-item px-2">
-                    <a class="nav-link" href="en/unduhan" <?= ($activePage == 'unduhan') ? 'style="color: #81CCE3 !important"' : '' ?>>Assets</a>
+                    <a class="nav-link" href="en/unduhan" <?= ($activePage == 'unduhan') ? 'style="color: #81CCE3 !important"' : '' ?>>Downloads</a>
                 </li>
                 <li class="nav-item px-2">
                     <a class="nav-link" href="en/registrasi" <?= ($activePage == 'registrasi') ? 'style="color: #81CCE3 !important"' : '' ?>>Register</a>

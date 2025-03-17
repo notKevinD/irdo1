@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Unduhan</title>
+  <title>Downloads</title>
   <link rel="icon" type="image/png" href="img/logo.png">
 
 <body>
@@ -14,7 +14,7 @@
   ?>
 
   <div class="container text-center bg-body pb-3" style="padding-top: 100px;">
-    <h1 class="pt-4">Assets</h1>
+    <h1 class="pt-4">Downloads</h1>
     <div class="row pt-3 d-flex justify-content-center" style="min-height : 500px">
 
       <?php

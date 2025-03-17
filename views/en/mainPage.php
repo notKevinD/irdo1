@@ -175,12 +175,12 @@ $result = $conn->query($query);
     $result = $conn->query($query);
     ?>
     <?php if ($result->num_rows == 0): ?>
-      <h2 style="padding: 150px 0px;">There is no Assets available!</h2>
+      <h2 style="padding: 150px 0px;">There is no Downloads available!</h2>
     <?php else: ?>
     <div class="container-fluid bg-body-tertiary">
       <div class="container text-center bg-body-tertiary pb-3">
-        <h5 class="pt-4" style="font-weight: bold; font-size: 18px; color: #81CCE3;">Assets</h5>
-        <h4 class="pt-1">Recent Assets</h4>
+        <h5 class="pt-4" style="font-weight: bold; font-size: 18px; color: #81CCE3;">Downloads</h5>
+        <h4 class="pt-1">Recent Downloads</h4>
         <div class="row pt-3 d-flex justify-content-center">
 
           <?php while ($unduhan = $result->fetch_assoc()): ?>

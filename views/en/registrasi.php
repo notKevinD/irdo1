@@ -90,7 +90,7 @@
 
         <div class="mb-3">
           <label for="bukti_pembayaran" class="form-label"><i class="bi bi-credit-card"></i> Proof of Payment
-            (.png/.jpg)</label>
+            (.png/.jpg, max 2 mb)</label>
           <input type="file" class="form-control" id="bukti_pembayaran" name="bukti_pembayaran" accept="image/*"
             required>
         </div>

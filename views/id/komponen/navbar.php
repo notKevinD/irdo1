@@ -8,7 +8,7 @@
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item px-2">
-                    <a class="nav-link" href="id/main" <?= ($activePage == 'home') ? 'style="color: #81CCE3 !important"' : '' ?>>Home</a>
+                    <a class="nav-link" href="id/main" <?= ($activePage == 'home') ? 'style="color: #81CCE3 !important"' : '' ?>>Beranda</a>
                 </li>
                 
                 <li class="nav-item px-2">
