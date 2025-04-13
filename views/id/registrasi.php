@@ -57,13 +57,13 @@
         <!-- Nama Pembimbing & Nomor HP dalam satu row -->
         <div class="row">
     <div class="col-md-6 mb-3">
-        <label for="pembimbing" class="form-label"><i class="bi bi-person-badge"></i> Mentor Teacher's Name</label>
+        <label for="pembimbing" class="form-label"><i class="bi bi-person-badge"></i>Nama Guru Pembimbing</label>
         <input type="text" class="form-control" id="pembimbing" name="pembimbing" required>
     </div>
 
     <div class="col-md-6 mb-3">
         <label for="nomor_hp" class="form-label d-flex align-items-center">
-            <i class="bi bi-telephone"></i> Phone Number
+            <i class="bi bi-telephone"></i>Nomor Telpon
         </label>
         <div class="input-group">
             <input type="tel" class="form-control" id="nomor_hp" name="nomor_hp" required>

@@ -64,17 +64,12 @@ if (preg_match('/^\/id\/detailBerita\/([\w-]+)$/', $request, $matches)) {
             case '/en/berita':
                 require 'views/en/berita.php';
                 break;
-            case '/tes':
-                require 'views/tes.php';
+            case '/config/prosesRegistrasi':
+                require 'config/proses_registrasi.php';
                 break;
-        
-
-        case '/config/prosesRegistrasi':
-            require 'config/proses_registrasi.php';
-            break;
-        default:
-            require 'views/id/404.php'; // Halaman tidak ditemukan
-            break;
+            default:
+                require 'views/id/404.php'; // Halaman tidak ditemukan
+                break;
     }
 }
 ?>
