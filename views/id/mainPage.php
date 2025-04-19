@@ -89,36 +89,36 @@
     $result = $conn->query($query);
 
     // Jika tidak ada berita, tampilkan pesan
-    if ($result->num_rows == 0) {
-      echo "<h2>Tidak ada berita yang tersedia!</h2>";
-      exit;
-    }
     ?>
     <div class="container-fluid bg-body-tertiary">
       <div class="container text-center bg-body-tertiary pb-3">
         <h5 class="pt-4" style="font-weight: bold; font-size: 18px; color: #81CCE3;">Berita</h5>
         <h4 class="pt-1">Berita Terbaru</h4>
-        <div class="row pt-3 d-flex justify-content-center" style="min-height: 450px;">
-          <?php while ($berita = $result->fetch_assoc()): ?>
-            <div class="col-md-4 d-flex justify-content-center align-items-center my-3">
-              <div class="card" style="width: 20rem;">
-                <img src="img/<?= htmlspecialchars($berita['foto']) ?>" class="card-img-top" alt="Gambar Berita">
-                <div class="card-body">
-                  <p class="d-inline-flex align-items-center">
-                    <i class="bi bi-person text-primary me-2"></i>
-                    <?= htmlspecialchars($berita['Penulis']) ?>
-                    <i class="bi bi-calendar4-week text-primary me-2 ps-3"></i>
-                    <?= date('d F Y', strtotime($berita['timeStamp'])) ?>
-                  </p>
-                  <p class="card-text text-start fw-bold"><?= htmlspecialchars($berita['Headline']) ?></p>
-                  <a href="id/detailBerita/<?= htmlspecialchars($berita['slug']) ?>" class="btn text-white"
-                    style="background-color: #283371;">Read More</a>
+        <?php if ($result->num_rows == 0): ?>
+          <h2 style="padding: 150px 0px;">Tidak ada berita tersedia</h2>
+        <?php else: ?>
+          <div class="row pt-3 d-flex justify-content-center" style="min-height: 450px;">
+            <?php while ($berita = $result->fetch_assoc()): ?>
+              <div class="col-md-4 d-flex justify-content-center align-items-center my-3">
+                <div class="card" style="width: 20rem;">
+                  <img src="img/<?= htmlspecialchars($berita['foto']) ?>" class="card-img-top" alt="Gambar Berita">
+                  <div class="card-body">
+                    <p class="d-inline-flex align-items-center">
+                      <i class="bi bi-person text-primary me-2"></i>
+                      <?= htmlspecialchars($berita['Penulis']) ?>
+                      <i class="bi bi-calendar4-week text-primary me-2 ps-3"></i>
+                      <?= date('d F Y', strtotime($berita['timeStamp'])) ?>
+                    </p>
+                    <p class="card-text text-start fw-bold"><?= htmlspecialchars($berita['Headline']) ?></p>
+                    <a href="id/detailBerita/<?= htmlspecialchars($berita['slug']) ?>" class="btn text-white"
+                      style="background-color: #283371;">Read More</a>
+                  </div>
                 </div>
               </div>
-            </div>
-          <?php endwhile; ?>
-        </div>
-        <a href="id/berita" class="btn py-2 text-white my-3" style="background-color: #F2713A ">Lihat Lebih Banyak</a>
+            <?php endwhile; ?>
+          </div>
+          <a href="id/berita" class="btn py-2 text-white my-3" style="background-color: #F2713A ">Lihat Lebih Banyak</a>
+        <?php endif; ?>
       </div>
     </div>
 
@@ -130,35 +130,35 @@
     $result = $conn->query($query);
 
     // Jika tidak ada berita, tampilkan pesan
-    if ($result->num_rows == 0) {
-      echo "<h2>Tidak ada pengumuman yang tersedia!</h2>";
-      exit;
-    }
     ?>
     <div class="container-fluid bg-body">
       <div class="container text-center bg-body pb-3">
         <h5 class="pt-4" style="font-weight: bold; font-size: 18px; color: #81CCE3;">Pengumuman</h5>
         <h4 class="pt-1">Pengumuman Terbaru</h4>
-        <div class="row pt-3 d-flex justify-content-center">
-          <?php while ($pengumuman = $result->fetch_assoc()): ?>
-            <div class="col-md-4 d-flex justify-content-center align-items-center my-3">
-              <div class="card" style="width: 20rem;">
-                <div class="card-body text-start">
-                  <p class="d-inline-flex align-items-center ">
-                    <i class="bi bi-calendar4-week text-primary me-2"></i>
-                    <?= date('d F Y', strtotime($pengumuman['timeStamp'])) ?>
-                  </p>
-                  <p class="card-text text-start fw-bold"><?= htmlspecialchars($pengumuman['headline']) ?></p>
-                  <a href="id/detailPengumuman/<?= htmlspecialchars($pengumuman['slug']) ?>" class="btn"
-                    style="background-color: #81CCE3; color: #283371">Selengkapnya</a>
+        <?php if ($result->num_rows == 0): ?>
+          <h2 style="padding: 150px 0px;">Tidak ada pengumuman tersedia</h2>
+        <?php else: ?>
+          <div class="row pt-3 d-flex justify-content-center">
+            <?php while ($pengumuman = $result->fetch_assoc()): ?>
+              <div class="col-md-4 d-flex justify-content-center align-items-center my-3">
+                <div class="card" style="width: 20rem;">
+                  <div class="card-body text-start">
+                    <p class="d-inline-flex align-items-center ">
+                      <i class="bi bi-calendar4-week text-primary me-2"></i>
+                      <?= date('d F Y', strtotime($pengumuman['timeStamp'])) ?>
+                    </p>
+                    <p class="card-text text-start fw-bold"><?= htmlspecialchars($pengumuman['headline']) ?></p>
+                    <a href="id/detailPengumuman/<?= htmlspecialchars($pengumuman['slug']) ?>" class="btn"
+                      style="background-color: #81CCE3; color: #283371">Selengkapnya</a>
+                  </div>
                 </div>
               </div>
-            </div>
-          <?php endwhile; ?>
+            <?php endwhile; ?>
 
-        </div>
-        <a href="id/pengumuman" class="btn py-2 text-white my-3" style="background-color: #F2713A ">Lihat Lebih
-          Banyak</a>
+          </div>
+          <a href="id/pengumuman" class="btn py-2 text-white my-3" style="background-color: #F2713A ">Lihat Lebih
+            Banyak</a>
+        <?php endif; ?>
       </div>
     </div>
 
@@ -170,15 +170,14 @@
     $result = $conn->query($query);
 
     // Jika tidak ada berita, tampilkan pesan
-    if ($result->num_rows == 0) {
-      echo "<h2>Tidak ada unduhan yang tersedia!</h2>";
-      exit;
-    }
     ?>
     <div class="container-fluid bg-body-tertiary">
       <div class="container text-center bg-body-tertiary pb-3">
         <h5 class="pt-4" style="font-weight: bold; font-size: 18px; color: #81CCE3;">Unduhan</h5>
         <h4 class="pt-1">Unduhan Terbaru</h4>
+        <?php if ($result->num_rows == 0): ?>
+          <h2 style="padding: 150px 0px;">Tidak ada unduhan tersedia</h2>
+        <?php else: ?>
         <div class="row pt-3 d-flex justify-content-center">
 
           <?php while ($unduhan = $result->fetch_assoc()): ?>
@@ -198,6 +197,7 @@
           </div>
         </div>
         <a href="id/unduhan" class="btn py-2 text-white my-3" style="background-color: #F2713A ">Lihat Lebih Banyak</a>
+        <?php endif; ?>
       </div>
     </div>
     <?php

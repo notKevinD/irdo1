@@ -82,50 +82,50 @@
     </div>
 
     <?php
-require 'config/database.php'; // Sesuaikan dengan koneksi database
-
-// Pastikan koneksi database ada
-if (!$conn) {
-    die("Koneksi database gagal!");
-}
-
-// Ambil semua berita
-$query = "SELECT headlineInggris, Penulis, timeStamp, slug, foto FROM berita ORDER BY timeStamp DESC LIMIT 3";
-$result = $conn->query($query);
-?>
-
-<div class="container-fluid bg-body-tertiary">
-  <div class="container text-center bg-body-tertiary pb-3">
-    <h5 class="pt-4" style="font-weight: bold; font-size: 18px; color: #81CCE3;">News</h5>
-    <h4 class="pt-1">Recent News</h4>
+    require 'config/database.php'; // Sesuaikan dengan koneksi database
     
-    <?php if ($result->num_rows == 0): ?>
-      <h2 style="padding: 150px 0px;">There is no news available!</h2>
-    <?php else: ?>
-      <div class="row pt-3 d-flex justify-content-center" style="min-height: 450px;">
-        <?php while ($berita = $result->fetch_assoc()): ?>
-          <div class="col-md-4 d-flex justify-content-center align-items-center my-3">
-            <div class="card" style="width: 20rem;">
-              <img src="img/<?= htmlspecialchars($berita['foto']) ?>" class="card-img-top" alt="Gambar Berita">
-              <div class="card-body">
-                <p class="d-inline-flex align-items-center">
-                  <i class="bi bi-person text-primary me-2"></i>
-                  <?= htmlspecialchars($berita['Penulis']) ?>
-                  <i class="bi bi-calendar4-week text-primary me-2 ps-3"></i>
-                  <?= date('d F Y', strtotime($berita['timeStamp'])) ?>
-                </p>
-                <p class="card-text text-start fw-bold"><?= htmlspecialchars($berita['headlineInggris']) ?></p>
-                <a href="en/detailBerita/<?= htmlspecialchars($berita['slug']) ?>" class="btn text-white"
-                  style="background-color: #283371;">Read More</a>
+    // Pastikan koneksi database ada
+    if (!$conn) {
+      die("Koneksi database gagal!");
+    }
+
+    // Ambil semua berita
+    $query = "SELECT headlineInggris, Penulis, timeStamp, slug, foto FROM berita ORDER BY timeStamp DESC LIMIT 3";
+    $result = $conn->query($query);
+    ?>
+
+    <div class="container-fluid bg-body-tertiary">
+      <div class="container text-center bg-body-tertiary pb-3">
+        <h5 class="pt-4" style="font-weight: bold; font-size: 18px; color: #81CCE3;">News</h5>
+        <h4 class="pt-1">Recent News</h4>
+
+        <?php if ($result->num_rows == 0): ?>
+          <h2 style="padding: 150px 0px;">There is no news available!</h2>
+        <?php else: ?>
+          <div class="row pt-3 d-flex justify-content-center" style="min-height: 450px;">
+            <?php while ($berita = $result->fetch_assoc()): ?>
+              <div class="col-md-4 d-flex justify-content-center align-items-center my-3">
+                <div class="card" style="width: 20rem;">
+                  <img src="img/<?= htmlspecialchars($berita['foto']) ?>" class="card-img-top" alt="Gambar Berita">
+                  <div class="card-body">
+                    <p class="d-inline-flex align-items-center">
+                      <i class="bi bi-person text-primary me-2"></i>
+                      <?= htmlspecialchars($berita['Penulis']) ?>
+                      <i class="bi bi-calendar4-week text-primary me-2 ps-3"></i>
+                      <?= date('d F Y', strtotime($berita['timeStamp'])) ?>
+                    </p>
+                    <p class="card-text text-start fw-bold"><?= htmlspecialchars($berita['headlineInggris']) ?></p>
+                    <a href="en/detailBerita/<?= htmlspecialchars($berita['slug']) ?>" class="btn text-white"
+                      style="background-color: #283371;">Read More</a>
+                  </div>
+                </div>
               </div>
-            </div>
+            <?php endwhile; ?>
           </div>
-        <?php endwhile; ?>
+          <a href="en/berita" class="btn py-2 text-white my-3" style="background-color: #F2713A">View More</a>
+        <?php endif; ?>
       </div>
-      <a href="en/berita" class="btn py-2 text-white my-3" style="background-color: #F2713A">View More</a>
-    <?php endif; ?>
-  </div>
-</div>
+    </div>
 
 
     <?php
@@ -137,33 +137,33 @@ $result = $conn->query($query);
 
     // Jika tidak ada berita, tampilkan pesan
     ?>
-    
+
     <div class="container-fluid bg-body">
       <div class="container text-center bg-body pb-3">
         <h5 class="pt-4" style="font-weight: bold; font-size: 18px; color: #81CCE3;">Announcement</h5>
         <h4 class="pt-1">Recent Announcement</h4>
         <?php if ($result->num_rows == 0): ?>
-      <h2 style="padding: 150px 0px;">There is no Announcement available!</h2>
-    <?php else: ?>
-        <div class="row pt-3 d-flex justify-content-center">
-          <?php while ($pengumuman = $result->fetch_assoc()): ?>
-            <div class="col-md-4 d-flex justify-content-center align-items-center my-3">
-              <div class="card" style="width: 20rem;">
-                <div class="card-body text-start">
-                  <p class="d-inline-flex align-items-center ">
-                    <i class="bi bi-calendar4-week text-primary me-2"></i>
-                    <?= date('d F Y', strtotime($pengumuman['timeStamp'])) ?>
-                  </p>
-                  <p class="card-text text-start fw-bold"><?= htmlspecialchars($pengumuman['headlineInggris']) ?></p>
-                  <a href="en/detailPengumuman/<?= htmlspecialchars($pengumuman['slug']) ?>" class="btn"
-                    style="background-color: #81CCE3; color: #283371">Selengkapnya</a>
+          <h2 style="padding: 150px 0px;">There is no Announcement available!</h2>
+        <?php else: ?>
+          <div class="row pt-3 d-flex justify-content-center">
+            <?php while ($pengumuman = $result->fetch_assoc()): ?>
+              <div class="col-md-4 d-flex justify-content-center align-items-center my-3">
+                <div class="card" style="width: 20rem;">
+                  <div class="card-body text-start">
+                    <p class="d-inline-flex align-items-center ">
+                      <i class="bi bi-calendar4-week text-primary me-2"></i>
+                      <?= date('d F Y', strtotime($pengumuman['timeStamp'])) ?>
+                    </p>
+                    <p class="card-text text-start fw-bold"><?= htmlspecialchars($pengumuman['headlineInggris']) ?></p>
+                    <a href="en/detailPengumuman/<?= htmlspecialchars($pengumuman['slug']) ?>" class="btn"
+                      style="background-color: #81CCE3; color: #283371">Selengkapnya</a>
+                  </div>
                 </div>
               </div>
-            </div>
-          <?php endwhile; ?>
+            <?php endwhile; ?>
 
-        </div>
-        <a href="en/pengumuman" class="btn py-2 text-white my-3" style="background-color: #F2713A ">View More</a>
+          </div>
+          <a href="en/pengumuman" class="btn py-2 text-white my-3" style="background-color: #F2713A ">View More</a>
         <?php endif; ?>
       </div>
     </div>
@@ -175,32 +175,32 @@ $result = $conn->query($query);
     $query = "SELECT * FROM unduhan ORDER BY id DESC LIMIT 3";
     $result = $conn->query($query);
     ?>
- 
+
     <div class="container-fluid bg-body-tertiary">
       <div class="container text-center bg-body-tertiary pb-3">
         <h5 class="pt-4" style="font-weight: bold; font-size: 18px; color: #81CCE3;">Downloads</h5>
         <h4 class="pt-1">Recent Downloads</h4>
         <div class="row pt-3 d-flex justify-content-center">
-        <?php if ($result->num_rows == 0): ?>
-      <h2 style="padding: 150px 0px;">There is no Downloads available!</h2>
-    <?php else: ?>
-          <?php while ($unduhan = $result->fetch_assoc()): ?>
-            <div class="col-md-4 d-flex justify-content-center align-items-center my-3">
-              <div class="card" style="width: 20rem;">
-                <div class="card-body">
-                  <h2 class="d-inline-flex align-items-center border-bottom">
-                    <?= htmlspecialchars($unduhan['jenisFile']) ?>
-                  </h2>
-                  <p class="card-text my-5 fw-semibold"><?= htmlspecialchars($unduhan['judul']) ?></p>
-                  <a href="unduhan/<?= htmlspecialchars($unduhan['namaFile']) ?>" class="btn text-white px-3 py-2"
-                    style="background-color: #F35D42" download>Download</a>
+          <?php if ($result->num_rows == 0): ?>
+            <h2 style="padding: 150px 0px;">There is no Downloads available!</h2>
+          <?php else: ?>
+            <?php while ($unduhan = $result->fetch_assoc()): ?>
+              <div class="col-md-4 d-flex justify-content-center align-items-center my-3">
+                <div class="card" style="width: 20rem;">
+                  <div class="card-body">
+                    <h2 class="d-inline-flex align-items-center border-bottom">
+                      <?= htmlspecialchars($unduhan['jenisFile']) ?>
+                    </h2>
+                    <p class="card-text my-5 fw-semibold"><?= htmlspecialchars($unduhan['judul']) ?></p>
+                    <a href="unduhan/<?= htmlspecialchars($unduhan['namaFile']) ?>" class="btn text-white px-3 py-2"
+                      style="background-color: #F35D42" download>Download</a>
+                  </div>
                 </div>
-              </div>
-            <?php endwhile; ?>
+              <?php endwhile; ?>
 
+            </div>
           </div>
-        </div>
-        <a href="en/unduhan" class="btn py-2 text-white my-3" style="background-color: #F2713A ">View More</a>
+          <a href="en/unduhan" class="btn py-2 text-white my-3" style="background-color: #F2713A ">View More</a>
         <?php endif; ?>
       </div>
     </div>
@@ -210,28 +210,28 @@ $result = $conn->query($query);
     $sql = "SELECT namaFile FROM galeri ORDER BY id LIMIT 3";
     $result = $conn->query($sql);
     ?>
-     <?php if ($result->num_rows == 0): ?>
+    <?php if ($result->num_rows == 0): ?>
       <h2 style="padding: 150px 0px;">There is no Photo available!</h2>
     <?php else: ?>
-    <div class="container-fluid bg-body">
-      <div class="container text-center bg-body pb-3">
-        <h5 class="pt-4" style="font-weight: bold; font-size: 18px; color: #81CCE3;">Gallery</h5>
-        <h4 class="pt-1">INRO 2023 Gallery</h4>
-        <div class="row pt-3 d-flex justify-content-center">
-          <?php
-          if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-              $imagePath = "img/galeri/" . $row["namaFile"] . ".JPG";
-              echo '<div class="col-md-4 d-flex justify-content-center align-items-center my-3 card12">
+      <div class="container-fluid bg-body">
+        <div class="container text-center bg-body pb-3">
+          <h5 class="pt-4" style="font-weight: bold; font-size: 18px; color: #81CCE3;">Gallery</h5>
+          <h4 class="pt-1">INRO 2023 Gallery</h4>
+          <div class="row pt-3 d-flex justify-content-center">
+            <?php
+            if ($result->num_rows > 0) {
+              while ($row = $result->fetch_assoc()) {
+                $imagePath = "img/galeri/" . $row["namaFile"] . ".JPG";
+                echo '<div class="col-md-4 d-flex justify-content-center align-items-center my-3 card12">
                         <img src="' . $imagePath . '" class="card-img-top" alt="Gambar Galeri">
                       </div>';
+              }
+            } else {
+              echo "<p>Belum ada gambar di galeri.</p>";
             }
-          } else {
-            echo "<p>Belum ada gambar di galeri.</p>";
-          }
-          ?>
-        </div>
-        <a href="en/galeri" class="btn py-2 text-white my-3" style="background-color: #F2713A">View More</a>
+            ?>
+          </div>
+          <a href="en/galeri" class="btn py-2 text-white my-3" style="background-color: #F2713A">View More</a>
         <?php endif; ?>
       </div>
     </div>

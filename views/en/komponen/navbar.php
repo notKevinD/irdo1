@@ -11,6 +11,9 @@
                     <a class="nav-link" href="en/main" <?= ($activePage == 'home') ? 'style="color: #81CCE3 !important"' : '' ?>>Home</a>
                 </li>
                 <li class="nav-item px-2">
+                    <a class="nav-link" href="en/tentang" <?= ($activePage == 'tentang') ? 'style="color: #81CCE3 !important"' : '' ?>>About</a>
+                </li>
+                <li class="nav-item px-2">
                     <a class="nav-link" href="en/berita" <?= ($activePage == 'berita') ? 'style="color: #81CCE3 !important"' : '' ?>>News</a>
                 </li>
                 <li class="nav-item px-2">

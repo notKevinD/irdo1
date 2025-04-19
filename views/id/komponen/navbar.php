@@ -10,7 +10,9 @@
                 <li class="nav-item px-2">
                     <a class="nav-link" href="id/main" <?= ($activePage == 'home') ? 'style="color: #81CCE3 !important"' : '' ?>>Beranda</a>
                 </li>
-                
+                <li class="nav-item px-2">
+                    <a class="nav-link" href="id/tentang" <?= ($activePage == 'tentang') ? 'style="color: #81CCE3 !important"' : '' ?>>Tentang</a>
+                </li>
                 <li class="nav-item px-2">
                     <a class="nav-link" href="id/berita" <?= ($activePage == 'berita') ? 'style="color: #81CCE3 !important"' : '' ?>>Berita</a>
                 </li>
@@ -18,7 +20,7 @@
                     <a class="nav-link" href="id/pengumuman" <?= ($activePage == 'pengumuman') ? 'style="color: #81CCE3 !important"' : '' ?>>Pengumuman</a>
                 </li>
                 <li class="nav-item px-2">
-                    <a class="nav-link" href="id/galeri" <?= ($activePage == 'galeri') ? 'style="color: #81CCE3 !important"' : '' ?>>galeri</a>
+                    <a class="nav-link" href="id/galeri" <?= ($activePage == 'galeri') ? 'style="color: #81CCE3 !important"' : '' ?>>Galeri</a>
                 </li>
                 <li class="nav-item px-2">
                     <a class="nav-link" href="id/unduhan" <?= ($activePage == 'unduhan') ? 'style="color: #81CCE3 !important"' : '' ?>>Unduhan</a>

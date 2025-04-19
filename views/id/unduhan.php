@@ -23,13 +23,10 @@
       // Ambil semua berita
       $query = "SELECT * FROM unduhan ORDER BY id DESC";
       $result = $conn->query($query);
-
-      // Jika tidak ada berita, tampilkan pesan
-      if ($result->num_rows == 0) {
-        echo "<h2>Tidak ada unduhan yang tersedia!</h2>";
-        exit;
-      }
       ?>
+       <?php if ($result->num_rows == 0): ?>
+        <h2 style="padding: 150px 0px;">Tidak ada unduhan yang tersedia</h2>
+      <?php else: ?>
       <?php while ($unduhan = $result->fetch_assoc()): ?>
         <div class="col-md-4 d-flex justify-content-center align-items-center my-3">
           <div class="card" style="width: 20rem;">
@@ -43,7 +40,7 @@
             </div>
           </div>
         <?php endwhile; ?>
-
+      <?php endif; ?>
     </div>
 
   </div>
