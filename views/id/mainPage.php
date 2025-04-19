@@ -245,7 +245,8 @@
         </div>
       </div>
     </div>
-
+        </div>
+        
     <?php
     include 'komponen/footer.php';
     ?>
