@@ -25,7 +25,7 @@ if ($result->num_rows == 0) {
 
 <body>
   <?php
-  $activePage = 'update';
+  $activePage = 'berita';
   include 'komponen/navbar.php';
   ?>
 

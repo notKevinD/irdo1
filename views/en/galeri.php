@@ -97,7 +97,7 @@
 
 <body>
 <?php 
-  $activePage = 'home'; 
+  $activePage = 'galeri'; 
   include 'komponen/navbar.php'; 
 ?>
 

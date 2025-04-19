@@ -11,7 +11,7 @@
 
 <body>
 <?php 
-  $activePage = 'update'; 
+  $activePage = 'pengumuman'; 
   include 'komponen/navbar.php'; 
   ?>  
 

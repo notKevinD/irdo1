@@ -10,25 +10,20 @@
                 <li class="nav-item px-2">
                     <a class="nav-link" href="en/main" <?= ($activePage == 'home') ? 'style="color: #81CCE3 !important"' : '' ?>>Home</a>
                 </li>
-
                 <li class="nav-item px-2">
-                    <a class="nav-link" href="en/tentang" <?= ($activePage == 'tentang') ? 'style="color: #81CCE3 !important"' : '' ?>>About</a>
+                    <a class="nav-link" href="en/berita" <?= ($activePage == 'berita') ? 'style="color: #81CCE3 !important"' : '' ?>>News</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false" <?= ($activePage == 'update') ? 'style="color: #81CCE3 !important"' : '' ?>>
-                        Update
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="en/berita">News</a></li>
-                        <li><a class="dropdown-item" href="en/pengumuman">Announcement</a></li>
-                    </ul>
+                <li class="nav-item px-2">
+                    <a class="nav-link" href="en/pengumuman" <?= ($activePage == 'pengumuman') ? 'style="color: #81CCE3 !important"' : '' ?>>Announcement</a>
+                </li>
+                <li class="nav-item px-2">
+                    <a class="nav-link" href="en/galeri" <?= ($activePage == 'galeri') ? 'style="color: #81CCE3 !important"' : '' ?>>Gallery</a>
                 </li>
                 <li class="nav-item px-2">
                     <a class="nav-link" href="en/unduhan" <?= ($activePage == 'unduhan') ? 'style="color: #81CCE3 !important"' : '' ?>>Downloads</a>
                 </li>
                 <li class="nav-item px-2">
-                    <a class="nav-link" href="en/registrasi" <?= ($activePage == 'registrasi') ? 'style="color: #81CCE3 !important"' : '' ?>>Register</a>
+                    <a class="nav-link" href="en/registrasi" <?= ($activePage == 'registrasi') ? 'style="color: #81CCE3 !important"' : '' ?>>Registration</a>
                 </li>
             </ul>
 

@@ -137,13 +137,14 @@ $result = $conn->query($query);
 
     // Jika tidak ada berita, tampilkan pesan
     ?>
-    <?php if ($result->num_rows == 0): ?>
-      <h2 style="padding: 150px 0px;">There is no Announcement available!</h2>
-    <?php else: ?>
+    
     <div class="container-fluid bg-body">
       <div class="container text-center bg-body pb-3">
         <h5 class="pt-4" style="font-weight: bold; font-size: 18px; color: #81CCE3;">Announcement</h5>
         <h4 class="pt-1">Recent Announcement</h4>
+        <?php if ($result->num_rows == 0): ?>
+      <h2 style="padding: 150px 0px;">There is no Announcement available!</h2>
+    <?php else: ?>
         <div class="row pt-3 d-flex justify-content-center">
           <?php while ($pengumuman = $result->fetch_assoc()): ?>
             <div class="col-md-4 d-flex justify-content-center align-items-center my-3">
@@ -174,15 +175,15 @@ $result = $conn->query($query);
     $query = "SELECT * FROM unduhan ORDER BY id DESC LIMIT 3";
     $result = $conn->query($query);
     ?>
-    <?php if ($result->num_rows == 0): ?>
-      <h2 style="padding: 150px 0px;">There is no Downloads available!</h2>
-    <?php else: ?>
+ 
     <div class="container-fluid bg-body-tertiary">
       <div class="container text-center bg-body-tertiary pb-3">
         <h5 class="pt-4" style="font-weight: bold; font-size: 18px; color: #81CCE3;">Downloads</h5>
         <h4 class="pt-1">Recent Downloads</h4>
         <div class="row pt-3 d-flex justify-content-center">
-
+        <?php if ($result->num_rows == 0): ?>
+      <h2 style="padding: 150px 0px;">There is no Downloads available!</h2>
+    <?php else: ?>
           <?php while ($unduhan = $result->fetch_assoc()): ?>
             <div class="col-md-4 d-flex justify-content-center align-items-center my-3">
               <div class="card" style="width: 20rem;">
