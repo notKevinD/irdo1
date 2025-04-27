@@ -40,7 +40,6 @@
       <p style="text-align: justify;">International Robot Design Olympiad Tahun 2025 mempertandingkan 3 (tiga) divisi
         sebagai berikut:</p>
       <ol>
-        <li>Soccer Robot Competition (SD, SMP, SMA)</li>
         <li>Creative Robot Competition(SD, SMP, SMA)</li>
         <li>Capstone Project Competion (Mahasiswa)</li>
       </ol>
@@ -49,12 +48,7 @@
         <div class="container text-center bg-body pb-3">
 
           <div class="row pt-3 d-flex justify-content-center">
-            <div class="col-md-4 d-flex justify-content-center align-items-center my-3 card12">
-              <div class="row">
-                <img src="img/Galeri/lomba3on3Soccer1.JPG" class="card-img-top" alt="Gambar Galeri">
-                <p>Soccer Robot Competition</p>
-              </div>
-            </div>
+          
 
 
 

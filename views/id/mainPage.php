@@ -40,18 +40,6 @@
         <div class="row pt-3 d-flex justify-content-center">
           <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center my-3">
             <div class="card shadow-sm" style="width: 25rem;">
-              <img src="img/Galeri/lomba3on3Soccer1.jpg" class="card-img-top" alt="Robot Soccer">
-              <div class="card-body">
-                <span class="badge bg-warning text-white">OFFLINE</span>
-                <h5 class="card-title mt-2">ROBOT SOCCER COMPETITION</h5>
-                <p class="card-text">Biaya: <strong>500.000,00</strong></p>
-                <p class="text-muted">Masa Registrasi sampai <br><strong>22 April 2025</strong></p>
-                <a href="#" class="btn btn-primary">Juknis Lomba</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center my-3">
-            <div class="card shadow-sm" style="width: 25rem;">
               <img src="img/Galeri/lombaRobotCreative.jpg" class="card-img-top" alt="Robot Soccer">
               <div class="card-body">
                 <span class="badge bg-warning text-white">OFFLINE</span>
@@ -216,7 +204,7 @@
           if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
               $imagePath = "img/galeri/" . $row["namaFile"] . ".JPG";
-              echo '<div class="col-md-4 d-flex justify-content-center align-items-center my-3 card12">
+              echo '<div class="col-4 d-flex justify-content-center align-items-center my-3 card12">
                         <img src="' . $imagePath . '" class="card-img-top" alt="Gambar Galeri">
                       </div>';
             }
@@ -235,13 +223,13 @@
         <h4 class="pt-1">Sponsors</h4>
         <div class="row pt-4 pb-4 d-flex justify-content-center">
           <div class="col-2 d-flex justify-content-center align-items-center my-3 card12">
-            <img src="img/robotic.png" class="card-img-top" alt="Gambar Galeri">
+            <img src="img/ubl.png" class="card-img-top" alt="Gambar Galeri">
           </div>
           <div class="col-2 d-flex justify-content-center align-items-center my-3 card12">
-            <img src="img/robotic.png" class="card-img-top" alt="Gambar Galeri">
+            <img src="img/ubl.png" class="card-img-top" alt="Gambar Galeri">
           </div>
           <div class="col-2 d-flex justify-content-center align-items-center my-3 card12">
-            <img src="img/robotic.png" class="card-img-top" alt="Gambar Galeri">
+            <img src="img/ubl.png" class="card-img-top" alt="Gambar Galeri">
           </div>
         </div>
       </div>

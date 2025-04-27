@@ -38,7 +38,7 @@
                 <ul class="dropdown-menu">
                     <li>
                         <a class="dropdown-item" href="<?php
-                        echo str_replace('/en/', '/id/', $_SERVER['REQUEST_URI']);
+                        echo str_replace('/id/', '/en/', $_SERVER['REQUEST_URI']);
                         ?>">English</a>
                     </li>
                 </ul>

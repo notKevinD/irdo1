@@ -119,7 +119,7 @@ $result = $conn->query($sql);
             while ($row = $result->fetch_assoc()) {
                 $imagePath = "img/galeri/" . $row["namaFile"] . ".JPG";
                 $imageArray[] = $imagePath;
-                echo '<div class="col-md-4 d-flex justify-content-center align-items-center my-3">
+                echo '<div class="col-4 d-flex justify-content-center align-items-center my-3">
                         <div class="gallery-item">
                             <img src="' . $imagePath . '" class="card-img-top img-fluid" alt="Gambar Galeri" onclick="openModal(' . (count($imageArray) - 1) . ')">
                             <button class="view-btn" onclick="openModal(' . (count($imageArray) - 1) . ')">Lihat</button>
