@@ -43,7 +43,7 @@
     </div>
 
     <!-- Back to Top Button -->
-    <a href="<?php echo $_SERVER['REQUEST_URI']; ?>#" class="back-to-top">
+    <a href="javascript:void(0);" onclick="window.scrollTo(0,0)" class="back-to-top">
         <i class="bi bi-arrow-up"></i>
     </a>
 

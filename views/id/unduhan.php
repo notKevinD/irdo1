@@ -24,35 +24,35 @@
       $query = "SELECT * FROM unduhan ORDER BY id DESC";
       $result = $conn->query($query);
       ?>
-       <?php if ($result->num_rows == 0): ?>
-        <h2 style="padding: 150px 0px;">Tidak ada unduhan yang tersedia</h2>
+      <?php if ($result->num_rows == 0): ?>
+        <h4 style="padding: 150px 0px;">Tidak ada unduhan yang tersedia</h4>
       <?php else: ?>
-      <?php while ($unduhan = $result->fetch_assoc()): ?>
-        <div class="col-md-4 d-flex justify-content-center align-items-center my-3">
-          <div class="card" style="width: 20rem;">
-            <div class="card-body">
-              <h2 class="d-inline-flex align-items-center border-bottom">
-                <?= htmlspecialchars($unduhan['jenisFile']) ?>
-              </h2>
-              <p class="card-text my-5 fw-semibold"><?= htmlspecialchars($unduhan['judul']) ?></p>
-              <a href="unduhan/<?= htmlspecialchars($unduhan['namaFile']) ?>" class="btn text-white px-3 py-2"
-                style="background-color: #F35D42" download>Unduh</a>
+        <?php while ($unduhan = $result->fetch_assoc()): ?>
+          <div class="col-md-4 d-flex justify-content-center align-items-center my-3">
+            <div class="card" style="width: 20rem;">
+              <div class="card-body">
+                <h2 class="d-inline-flex align-items-center border-bottom">
+                  <?= htmlspecialchars($unduhan['jenisFile']) ?>
+                </h2>
+                <p class="card-text my-5 fw-semibold"><?= htmlspecialchars($unduhan['judul']) ?></p>
+                <a href="unduhan/<?= htmlspecialchars($unduhan['namaFile']) ?>" class="btn text-white px-3 py-2"
+                  style="background-color: #F35D42" download>Unduh</a>
+              </div>
             </div>
-          </div>
-        <?php endwhile; ?>
-      <?php endif; ?>
+          <?php endwhile; ?>
+        <?php endif; ?>
+      </div>
+
     </div>
 
   </div>
-
-      </div>
 
   <?php
   include 'komponen/footer.php';
   ?>
 
 
- 
+
 </body>
 
 </html>

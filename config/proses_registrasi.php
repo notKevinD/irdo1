@@ -67,37 +67,74 @@ $stmt = $conn->prepare("INSERT INTO registrasi (nama_tim, asal_sekolah, anggota1
 $stmt->bind_param("ssssssssss", $nama_tim, $asal_sekolah, $anggota1, $anggota2, $anggota3, $pembimbing, $nomor_hp, $email, $kategori, $new_file_name);
 
 if ($stmt->execute()) {
-    echo "<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        let modal = document.createElement('div');
+    echo '<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        let modal = document.createElement("div");
         modal.innerHTML = `
-            <div style='position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
-                        background-color: #283371; color: white; padding: 200px; border-radius: 5px;
-                        text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 9999;'>
-                <p style='margin: 0; font-size: 40px; font-weight: bold;'>Registration Complete</p>
-                <button onclick='window.location.href=\"../id/main\"' style='margin-top: 50px; background: white; 
-                        color: #283371; border: none; padding: 16px 24px; border-radius: 5px; cursor: pointer;'>Back</button>
-            </div>
+        <div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            background:rgb(32, 140, 255); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+            color: white; padding: 30px 30px; border-radius: 20px; text-align: center;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); z-index: 9999; animation: fadeInScale 0.4s ease-in-out;">
+            <img src="../img/logo.png" alt="Logo" style="width: 200px; margin-bottom: 2px;">
+            <p style="margin: 0; font-size: 36px; font-weight: bold; letter-spacing: 1px;">🎉 Registration Complete!</p>
+            <p style="margin-top: 20px; font-size: 18px; opacity: 0.85;">Thank you for registering. We\'ll be in touch soon!</p>
+            <button onclick="window.location.href=\'../id/main\'" style="
+                margin-top: 40px; background: white; color: #283371; border: none; padding: 14px 28px;
+                font-size: 16px; font-weight: bold; border-radius: 8px; cursor: pointer; transition: all 0.3s ease;"
+                onmouseover="this.style.background=\'#f0f0f0\'" onmouseout="this.style.background=\'white\'">← Back to Home</button>
+        </div>
+        <style>
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+        </style>
         `;
         document.body.appendChild(modal);
     });
-</script>";
+</script>';
+
+
 } else {
-    echo "<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        let modal = document.createElement('div');
-        modal.innerHTML = `
-            <div style='position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
-                        background-color: salmon; color: white; padding: 200px; border-radius: 5px;
-                        text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 9999;'>
-                <p style='margin: 0; font-size: 40px; font-weight: bold;'>Registration Failed</p>
-                <button onclick='window.location.href=\"../id/main\"' style='margin-top: 50px; background: white; 
-                        color: salmon; border: none; padding: 16px 24px; border-radius: 5px; cursor: pointer;'>Back</button>
+        echo '<script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let modal = document.createElement("div");
+            modal.innerHTML = `
+            <div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+                background: rgba(255, 94, 77, 0.75); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+                color: white; padding: 80px 60px; border-radius: 20px; text-align: center;
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); z-index: 9999; animation: fadeInScale 0.4s ease-in-out;">
+                <p style="margin: 0; font-size: 36px; font-weight: bold; letter-spacing: 1px;">❌ Registration Failed</p>
+                <p style="margin-top: 20px; font-size: 18px; opacity: 0.85;">Oops! Something went wrong. Please try again later.</p>
+                <button onclick="window.location.href=\'../id/main\'" style="
+                    margin-top: 40px; background: white; color: #ff5e4d; border: none; padding: 14px 28px;
+                    font-size: 16px; font-weight: bold; border-radius: 8px; cursor: pointer; transition: all 0.3s ease;"
+                    onmouseover="this.style.background=\'#f0f0f0\'" onmouseout="this.style.background=\'white\'">← Back to Home</button>
             </div>
-        `;
-        document.body.appendChild(modal);
-    });
-</script>";
+            <style>
+            @keyframes fadeInScale {
+                from {
+                    opacity: 0;
+                    transform: translate(-50%, -50%) scale(0.9);
+                }
+                to {
+                    opacity: 1;
+                    transform: translate(-50%, -50%) scale(1);
+                }
+            }
+            </style>
+            `;
+            document.body.appendChild(modal);
+        });
+    </script>';
+    
+    
 }
 
 $stmt->close();

@@ -29,7 +29,7 @@
       // Jika tidak ada berita, tampilkan pesan
       ?>
       <?php if ($result->num_rows == 0): ?>
-        <h2 style="padding: 150px 0px;">There's no news available!</h2>
+        <h4 style="padding: 150px 0px;">There's no news available!</h4>
       <?php else: ?>
         <?php while ($berita = $result->fetch_assoc()): ?>
           <div class="col-md-4 d-flex justify-content-center align-items-center my-3">

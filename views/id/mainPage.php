@@ -38,7 +38,7 @@
       <div class="container-xxl text-center bg-body-secondary pb-3">
         <!-- <h4 class="pt-4">Cabang Perlombaan</h4> -->
         <div class="row pt-3 d-flex justify-content-center">
-          <div class="col-4 d-flex justify-content-center my-3">
+          <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center my-3">
             <div class="card shadow-sm" style="width: 25rem;">
               <img src="img/Galeri/lomba3on3Soccer1.jpg" class="card-img-top" alt="Robot Soccer">
               <div class="card-body">
@@ -50,7 +50,7 @@
               </div>
             </div>
           </div>
-          <div class="col-4 d-flex justify-content-center my-3">
+          <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center my-3">
             <div class="card shadow-sm" style="width: 25rem;">
               <img src="img/Galeri/lombaRobotCreative.jpg" class="card-img-top" alt="Robot Soccer">
               <div class="card-body">
@@ -62,7 +62,7 @@
               </div>
             </div>
           </div>
-          <div class="col-4 d-flex justify-content-center my-3">
+          <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center my-3">
             <div class="card shadow-sm" style="width: 25rem;">
               <img src="img/Galeri/lombaRobotCreative2.jpg" class="card-img-top" alt="Robot Soccer">
               <div class="card-body">
@@ -95,7 +95,7 @@
         <h5 class="pt-4" style="font-weight: bold; font-size: 18px; color: #81CCE3;">Berita</h5>
         <h4 class="pt-1">Berita Terbaru</h4>
         <?php if ($result->num_rows == 0): ?>
-          <h2 style="padding: 150px 0px;">Tidak ada berita tersedia</h2>
+          <h4 style="padding: 150px 0px;">Tidak ada berita tersedia</h4>
         <?php else: ?>
           <div class="row pt-3 d-flex justify-content-center" style="min-height: 450px;">
             <?php while ($berita = $result->fetch_assoc()): ?>
@@ -136,7 +136,7 @@
         <h5 class="pt-4" style="font-weight: bold; font-size: 18px; color: #81CCE3;">Pengumuman</h5>
         <h4 class="pt-1">Pengumuman Terbaru</h4>
         <?php if ($result->num_rows == 0): ?>
-          <h2 style="padding: 150px 0px;">Tidak ada pengumuman tersedia</h2>
+          <h4 style="padding: 150px 0px;">Tidak ada pengumuman tersedia</h4>
         <?php else: ?>
           <div class="row pt-3 d-flex justify-content-center">
             <?php while ($pengumuman = $result->fetch_assoc()): ?>
@@ -176,27 +176,27 @@
         <h5 class="pt-4" style="font-weight: bold; font-size: 18px; color: #81CCE3;">Unduhan</h5>
         <h4 class="pt-1">Unduhan Terbaru</h4>
         <?php if ($result->num_rows == 0): ?>
-          <h2 style="padding: 150px 0px;">Tidak ada unduhan tersedia</h2>
+          <h4 style="padding: 150px 0px;">Tidak ada unduhan tersedia</h4>
         <?php else: ?>
-        <div class="row pt-3 d-flex justify-content-center">
+          <div class="row pt-3 d-flex justify-content-center">
 
-          <?php while ($unduhan = $result->fetch_assoc()): ?>
-            <div class="col-md-4 d-flex justify-content-center align-items-center my-3">
-              <div class="card" style="width: 20rem;">
-                <div class="card-body">
-                  <h2 class="d-inline-flex align-items-center border-bottom">
-                    <?= htmlspecialchars($unduhan['jenisFile']) ?>
-                  </h2>
-                  <p class="card-text my-5 fw-semibold"><?= htmlspecialchars($unduhan['judul']) ?></p>
-                  <a href="unduhan/<?= htmlspecialchars($unduhan['namaFile']) ?>" class="btn text-white px-3 py-2"
-                    style="background-color: #F35D42" download>Unduh</a>
+            <?php while ($unduhan = $result->fetch_assoc()): ?>
+              <div class="col-md-4 d-flex justify-content-center align-items-center my-3">
+                <div class="card" style="width: 20rem;">
+                  <div class="card-body">
+                    <h2 class="d-inline-flex align-items-center border-bottom">
+                      <?= htmlspecialchars($unduhan['jenisFile']) ?>
+                    </h2>
+                    <p class="card-text my-5 fw-semibold"><?= htmlspecialchars($unduhan['judul']) ?></p>
+                    <a href="unduhan/<?= htmlspecialchars($unduhan['namaFile']) ?>" class="btn text-white px-3 py-2"
+                      style="background-color: #F35D42" download>Unduh</a>
+                  </div>
                 </div>
-              </div>
-            <?php endwhile; ?>
+              <?php endwhile; ?>
 
+            </div>
           </div>
-        </div>
-        <a href="id/unduhan" class="btn py-2 text-white my-3" style="background-color: #F2713A ">Lihat Lebih Banyak</a>
+          <a href="id/unduhan" class="btn py-2 text-white my-3" style="background-color: #F2713A ">Lihat Lebih Banyak</a>
         <?php endif; ?>
       </div>
     </div>
@@ -228,28 +228,29 @@
         <a href="id/galeri" class="btn py-2 text-white my-3" style="background-color: #F2713A">Lihat Lebih Banyak</a>
       </div>
     </div>
+
     <div class="container-fluid bg-body-tertiary">
       <div class="container text-center bg-body-tertiary pb-3">
-        <h5 class="pt-4" style="font-weight: bold; font-size: 18px; color: #81CCE3;">Sponsor</h5>
-        <h4 class="pt-1">Sponsor</h4>
+        <h5 class="pt-4" style="font-weight: bold; font-size: 18px; color: #81CCE3;">Sponsors</h5>
+        <h4 class="pt-1">Sponsors</h4>
         <div class="row pt-4 pb-4 d-flex justify-content-center">
-          <div class="col-md-1 d-flex justify-content-center align-items-center my-3 card12">
+          <div class="col-2 d-flex justify-content-center align-items-center my-3 card12">
             <img src="img/robotic.png" class="card-img-top" alt="Gambar Galeri">
           </div>
-          <div class="col-md-1 d-flex justify-content-center align-items-center my-3 card12">
+          <div class="col-2 d-flex justify-content-center align-items-center my-3 card12">
             <img src="img/robotic.png" class="card-img-top" alt="Gambar Galeri">
           </div>
-          <div class="col-md-1 d-flex justify-content-center align-items-center my-3 card12">
+          <div class="col-2 d-flex justify-content-center align-items-center my-3 card12">
             <img src="img/robotic.png" class="card-img-top" alt="Gambar Galeri">
           </div>
         </div>
       </div>
     </div>
-        </div>
-        
-    <?php
-    include 'komponen/footer.php';
-    ?>
+  </div>
+
+  <?php
+  include 'komponen/footer.php';
+  ?>
 
 
 </body>
